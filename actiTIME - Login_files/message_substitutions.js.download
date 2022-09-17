@@ -1,0 +1,34 @@
+window.MESSAGE_SUBSTITUTIONS = [
+
+    { regexp: /#customers/g, value: SystemSettings.firstLevelNamingPlural.toLowerCase() },
+    { regexp: /#Customers/g, value: SystemSettings.firstLevelNamingPlural },
+    { regexp: /#CUSTOMERS/g, value: SystemSettings.firstLevelNamingPlural.toUpperCase() },
+    { regexp: /#customer/g,  value: SystemSettings.firstLevelNamingSingular.toLowerCase() },
+    { regexp: /#Customer/g,  value: SystemSettings.firstLevelNamingSingular },
+    { regexp: /#CUSTOMER/g,  value: SystemSettings.firstLevelNamingSingular.toUpperCase() },
+
+    { regexp: /#projects/g, value: SystemSettings.secondLevelNamingPlural.toLowerCase() },
+    { regexp: /#Projects/g, value: SystemSettings.secondLevelNamingPlural },
+    { regexp: /#PROJECTS/g, value: SystemSettings.secondLevelNamingPlural.toUpperCase() },
+    { regexp: /#project/g,  value: SystemSettings.secondLevelNamingSingular.toLowerCase() },
+    { regexp: /#Project/g,  value: SystemSettings.secondLevelNamingSingular },
+    { regexp: /#PROJECT/g,  value: SystemSettings.secondLevelNamingSingular.toUpperCase() },
+
+    { regexp: /#tasks/g, value: SystemSettings.thirdLevelNamingPlural.toLowerCase() },
+    { regexp: /#Tasks/g, value: SystemSettings.thirdLevelNamingPlural },
+    { regexp: /#TASKS/g, value: SystemSettings.thirdLevelNamingPlural.toUpperCase() },
+    { regexp: /#task/g,  value: SystemSettings.thirdLevelNamingSingular.toLowerCase() },
+    { regexp: /#Task/g,  value: SystemSettings.thirdLevelNamingSingular },
+    { regexp: /#TASK/g,  value: SystemSettings.thirdLevelNamingSingular.toUpperCase() },
+
+    { regexp: /#user_groups/g, value: SystemSettings.userGroupNamingPlural.toLowerCase() },
+    { regexp: /#User_Groups/g, value: SystemSettings.userGroupNamingPlural },
+    { regexp: /#USER_GROUPS/g, value: SystemSettings.userGroupNamingPlural.toUpperCase() },
+    { regexp: /#user_group/g,  value: SystemSettings.userGroupNamingSingular.toLowerCase() },
+    { regexp: /#User_Group/g,  value: SystemSettings.userGroupNamingSingular },
+    { regexp: /#USER_GROUP/g,  value: SystemSettings.userGroupNamingSingular.toUpperCase() },
+
+    { regexp: /#dec_separator/g, value: SystemSettings.decimalSeparator },
+
+    { regexp: /#\$/g, value: SystemSettings.currencySign }
+];

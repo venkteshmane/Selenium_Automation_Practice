@@ -1,0 +1,43 @@
+Ext.BLANK_IMAGE_URL = BLANK_IMAGE_URL;
+
+// fix for IE9 Standards mode
+if ((typeof Range !== "undefined") && !Range.prototype.createContextualFragment)
+{
+    Range.prototype.createContextualFragment = function(html)
+    {
+        var frag = document.createDocumentFragment(),
+                div = document.createElement("div");
+        frag.appendChild(div);
+        div.outerHTML = html;
+        return frag;
+    };
+}
+
+// fix for IE Standards mode
+Ext.override(Ext.menu.Menu, {
+    autoWidth : function(){
+        var el = this.el;
+        if(!el){
+            return;
+        }
+        var w = this.width;
+        if(w){
+            el.setWidth(w);
+        }
+    }
+});
+
+//extJs table layout bug fix (dynamically change container's items)
+Ext.override(Ext.layout.TableLayout, {
+    onLayout : function(ct, target){
+        var cs = ct.items.items, len = cs.length, c, i;
+
+        if(!this.table){
+           target.addClass('x-table-layout-ct');
+           this.table = target.createChild({tag:'table', cls:'x-table-layout', cellspacing: 0, cn: {tag: 'tbody'}}, null, true);
+        }
+
+        this.renderAll(ct, target);//move out that can render items more than once.
+    }
+});
+

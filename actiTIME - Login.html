@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://demo.actitime.com/login.do -->
+<html style="height: 100%" class=" ext-strict"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>actiTIME - Login</title>
+    <meta name="keywords" content="actitimeveractiTIME 2020 Online">
+    <meta http-equiv="keywords" content="actitimeveractiTIME 2020 Online">
+    <meta name="description" content="actiTIME_software_actiTIME 2020 Online">
+    <meta name="robots" content="noindex,nofollow">
+    
+
+<link rel="stylesheet" type="text/css" href="./actiTIME - Login_files/at.css">
+<!--[if lte IE 9]>
+<link rel="stylesheet" type="text/css" href="/public/at.css-part1.css?hash=1846506722"><link rel="stylesheet" type="text/css" href="/public/at.css-part2.css?hash=1846506722"><link rel="stylesheet" type="text/css" href="/public/at.css-part3.css?hash=1846506722">
+<link rel="stylesheet" type="text/css" href="/css/ie-hacks.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/css/ie8-hacks.css">
+<![endif]-->
+
+
+
+
+
+<link rel="preload" as="font" href="https://demo.actitime.com/fonts/Roboto/Roboto-Regular-webfont.woff" type="font/woff" crossorigin="">
+<link rel="preload" as="font" href="https://demo.actitime.com/fonts/Roboto/Roboto-Medium-webfont.woff" type="font/woff" crossorigin="">
+<link rel="preload" as="font" href="https://demo.actitime.com/fonts/Roboto/Roboto-Light-webfont.woff" type="font/woff" crossorigin="">
+
+<link rel="stylesheet" href="./actiTIME - Login_files/all.css" type="text/css">
+
+
+    
+
+
+<link rel="SHORTCUT ICON" href="https://demo.actitime.com/favicon2.ico">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var PRODUCT_NAME = "actiTIME";
+    window.BASE_PATH = '/';
+    
+
+    //this needed if Cookies was disabled or browser load first page after open
+    var index = BASE_PATH.indexOf(";jsessionid");
+    if (index != -1){
+        BASE_PATH = BASE_PATH.substring(0, index);
+    }
+
+    var RPC_LINK = '/rpc';
+
+    var isAT = true;
+    window.AT_IMAGE_PATH = BASE_PATH + "img/";
+    window.AP_IMAGE_PATH = BASE_PATH + "actiplans/img/";
+    window.IMAGE_PATH = (isAT ? AT_IMAGE_PATH : AP_IMAGE_PATH);
+
+    var HASH = '1846506722';
+
+    var BLANK_IMAGE_URL = '/img/default/extjs/s.gif?hash=1846506722';
+
+    var REFRESH_SESSION_URL = '/refreshSession';
+
+    var TimeUtils = {
+        UNIFORM_DATE_FORMAT: "yyyy-MM-dd"
+    };
+
+    //TODO: evdokimov obsolete version must be removed
+    var DateType ={
+        TODAY: "date.state.today",
+YESTERDAY: "date.state.yesterday",
+LAST_MONDAY: "date.state.last_monday",
+LAST_TUESDAY: "date.state.last_tuesday",
+LAST_WEDNESDAY: "date.state.last_wednesday",
+LAST_THURSDAY: "date.state.last_thursday",
+LAST_FRIDAY: "date.state.last_friday",
+LAST_SATURDAY: "date.state.last_saturday",
+LAST_SUNDAY: "date.state.last_sunday",
+END_OF_THE_PREVIOUS_MONTH: "date.state.end_of_the_previous_month",
+BEGINNING_OF_THE_CURRENT_MONTH: "date.state.beginning_of_the_current_month",
+CUSTOM_DATE: "date.state.custom",
+
+    };
+
+    var FRONT_REDIRECTOR_URL = '/frontRedirector.do';
+
+    var ATNamings = {
+        CUSTOM_LEVEL_NAMING_CODE: 0
+    };
+
+    //TODO: evdokimov obsolete version must be removed
+    var DateRangeStateUtil = {
+        CURRENT_MONTH: "range.state.current.month",
+        CURRENT_MONTH_TILL_TODAY: "range.state.current.month.till.today",
+        PREVIOUS_MONTH: "range.state.previous.month",
+        NEXT_MONTH: "range.state.next.month",
+        CURRENT_WEEK: "range.state.current.week",
+        CURRENT_WEEK_TILL_TODAY: "range.state.current.week.till.today",
+        NEXT_WEEK: "range.state.next.week",
+        PREVIOUS_WEEK: "range.state.previous.week",
+        CURRENT_AND_PREVIOUS_WEEK: "range.state.current.and.previous.weeks",
+        CURRENT_AND_TWO_PREVIOUS_WEEKS: "range.state.current.and.2.previous.weeks",
+        FIRST_HALF_OF_CURRENT_MONTH: "range.state.first.half.of.current.month",
+        SECOND_HALF_OF_CURRENT_MONTH: "range.state.second.half.of.current.month",
+        SECOND_HALF_OF_PREVIOUS_MONTH: "range.state.second.half.of.previous.month",
+        LAST_7_DAYS: "range.state.last.7.days",
+        LAST_14_DAYS: "range.state.last.14.days",
+        LAST_21_DAYS: "range.state.last.21.days",
+        CURRENT_YEAR: "range.state.current.year",
+        CURRENT_AND_NEXT_YEAR: "range.state.current.and.next.year",
+        NEXT_YEAR: "range.state.next.year",
+        CURRENT_YEAR_TILL_TODAY: "range.state.current.year.till.today",
+        PREVIOUS_YEAR: "range.state.previous.year",
+        CURRENT_AND_NEXT_MONTH: "range.state.current.and.next.month",
+        NEXT_TWO_MONTHS: "range.state.next.two.months",
+        EIGHT_WEEKS_AHEAD: "range.state.eight.weeks.ahead",
+        TEN_WEEKS_AHEAD: "range.state.ten.weeks.ahead",
+        TWELVE_WEEKS_AHEAD: "range.state.twelve.weeks.ahead",
+        CURRENT_QUARTER: "range.state.current.quarter",
+        PREVIOUS_QUARTER: "range.state.previous.quarter",
+        CUSTOM: "range.state.custom"
+    };
+
+    var EvaDateStateUtil = {
+        TODAY: "date.state.today",
+        YESTERDAY: "date.state.yesterday",
+        LAST_MONDAY: "date.state.last_monday",
+        LAST_TUESDAY: "date.state.last_tuesday",
+        LAST_WEDNESDAY: "date.state.last_wednesday",
+        LAST_THURSDAY: "date.state.last_thursday",
+        LAST_FRIDAY: "date.state.last_friday",
+        LAST_SATURDAY: "date.state.last_saturday",
+        LAST_SUNDAY: "date.state.last_sunday",
+        END_OF_PREVIOUS_MONTH: "date.state.end_of_the_previous_month",
+        BEGINNING_OF_CURRENT_MONTH: "date.state.beginning_of_the_current_month",
+        CUSTOM_DATE: "date.state.custom"
+    };
+
+    var NotificationType = {
+        PERSONAL_TT: 1,
+        UNSUBMITTED_TT: 2,
+        DEADLINE: 3,
+        ESTIMATE: 4,
+        PROJECT_BUDGET: 6,
+        PERSONAL_EARNINGS: 7
+    };
+
+    var NotificationNameByType = {};
+    NotificationNameByType[NotificationType.PERSONAL_TT] = 'personal_tt';
+    NotificationNameByType[NotificationType.UNSUBMITTED_TT] = 'unsubmitted_tt';
+    NotificationNameByType[NotificationType.DEADLINE] = 'deadline';
+    NotificationNameByType[NotificationType.ESTIMATE] = 'estimate';
+    NotificationNameByType[NotificationType.PROJECT_BUDGET] = 'project_budget';
+    NotificationNameByType[NotificationType.PERSONAL_EARNINGS] = 'personal_earnings';
+
+
+    var RuleJavaClassNames = [];
+    RuleJavaClassNames[NotificationType.PERSONAL_TT] = 'com.actimind.actitime.notifications.rules.PersonalTTRule';
+    RuleJavaClassNames[NotificationType.UNSUBMITTED_TT] = 'com.actimind.actitime.notifications.rules.UnsubmittedTTRule';
+    RuleJavaClassNames[NotificationType.DEADLINE] = 'com.actimind.actitime.notifications.rules.DeadlineRule';
+    RuleJavaClassNames[NotificationType.ESTIMATE] = 'com.actimind.actitime.notifications.rules.EstimateRule';
+    RuleJavaClassNames[NotificationType.PROJECT_BUDGET] = 'com.actimind.actitime.notifications.rules.ProjectBudgetRule';
+    RuleJavaClassNames[NotificationType.PERSONAL_EARNINGS] = 'com.actimind.actitime.notifications.rules.PersonalEarningsRule';
+
+    var CustomerManagementConstants = {
+        CUSTOMER_CONCURRENTLY_DELETED: 562
+    };
+
+    var ProjectManagementConstants = {
+        PROJECT_CONCURRENTLY_DELETED: 564
+    };
+
+    var TaskManagementConstants = {
+        TASK_CONCURRENTLY_DELETED: 565,
+        TASK_IS_NOT_ASSIGNED: 566,
+        CREATE_TASKS_NO_ASSIGNED_PROJECTS_ERROR_CODE: 563
+    };
+
+    var MoneyFilterRangeClassName = 'com.actimind.actitime.notifications.rules.parameters.MoneyFilterRange';
+
+    var JQUERY_RPC_ERROR_MESSAGES = {
+        UNEXPECTED_ERROR: 'Unexpected error occurred.\nPlease contact actiTIME support team.\n\n Error details:\n\n',
+        TIMEOUT: 'Cannot connect to actiTIME server (connection timed out).\nPlease try again later.',
+        SESSION_EXPIRED: 'Your session has expired.\nThe current page will be reloaded to start a new session.\n\nSorry for inconvenience.',
+        NO_RIGHTS: 'You no longer have rights for this operation.',
+        PARSE_ERROR: 'Could not parse server response.',
+        NETWORK_ERROR: 'Cannot connect to actiTIME server as a network error occurred.\nMake sure you are connected to the Internet and try again later.',
+        HTTP_ERROR: 'HTTP error:',
+        JSON_RPC_ERROR: 'JSON-RPC error',
+        EXCEPTION: 'exception:',
+        MESSAGE: 'message:',
+        TEXT_STATUS: 'textStatus:',
+        ERROR_THROWN: 'errorThrown:',
+        MORE_INFO: '\nMore info is available in the browser console.',
+        FUTURE_HIRE_DATE: 'Your access to actiTIME is disabled due to hire date set in future.'
+    };
+
+    var AJAX_USER_ACTION_ERROR_CODES = {
+        UNEXPECTED_ERROR: 550,
+        NO_ACTIVE_LICENSE: 552,
+        LICENSE_VIOLATION: 551,
+        NO_SUCH_USER: 554,
+        SESSION_EXPIRED: 553,
+        USER_IS_DISABLED: 555,
+        NO_RIGHTS: 556,
+        PRODUCT_MISMATCH: 558,
+        INCORRECT_CHALLENGE_RESPONSE: 557,
+        ERROR_STATE: 559
+    };
+
+    var AJAX_USER_ACTION_ERROR_MESSAGES = {
+        UNEXPECTED_ERROR: 'Unexpected error occurred.\nPlease contact actiTIME support team.',
+        NO_ACTIVE_LICENSE: 'No active license was found. Page will be reloaded.',
+        LICENSE_VIOLATION: 'License was violated. Page will be reloaded.',
+        NO_SUCH_USER: 'Your account was deleted from the system. Page will be reloaded.',
+        USER_IS_DISABLED: 'Your access to actiTIME was disabled. Page will be reloaded.'
+    };
+
+    var SupportMenuConstants = {
+        reportBugURL: '/contactsupport.do',
+        faqURL: '/support/popups/faqpopup.do',
+        integrationPopupURL: '/integration.do'
+    };
+
+    var AccessRightsUtil = {};
+
+    window.LeaveTimeRequestStatus = {
+        REQUESTED: 0,
+        APPROVED: 1,
+        REJECTED: 2
+    };
+
+
+    var Product = {
+        actiTIME: "actiTIME",
+        actiPLANS: "actiPLANS"
+    };
+
+    var DHTMLColors = {
+        mouseOverHighlightColor: '#ffd303',
+        onClickHighlightColor: '#ffd303',
+        beingSavedColor: '#fdeea8'
+    };
+
+    var EffectiveWeekApprovalStatus = {
+        NOT_READY: "NOT_READY",
+        READY: "READY",
+        APPROVED: "APPROVED",
+        REJECTED: "REJECTED",
+        AUTO_APPROVED: "AUTO_APPROVED"
+    };
+
+    window.DiacriticsUtilConstants = {};
+
+    window.DiacriticsUtilConstants.DIACRITICS = [
+"ⓐ|ａ|ẚ|à|á|â|ầ|ấ|ẫ|ẩ|ã|ā|ă|ằ|ắ|ẵ|ẳ|ȧ|ǡ|ä|ǟ|ả|å|ǻ|ǎ|ȁ|ȃ|ạ|ậ|ặ|ḁ|ą|ⱥ|ɐ",
+"ⓑ|ｂ|ḃ|ḅ|ḇ|ƀ|ƃ|ɓ",
+"ⓒ|ｃ|ć|ĉ|ċ|č|ç|ḉ|ƈ|ȼ|ꜿ|ↄ",
+"ⓓ|ｄ|ḋ|ď|ḍ|ḑ|ḓ|ḏ|đ|ƌ|ɖ|ɗ|ꝺ",
+"ⓔ|ｅ|è|é|ê|ề|ế|ễ|ể|ẽ|ē|ḕ|ḗ|ĕ|ė|ë|ẻ|ě|ȅ|ȇ|ẹ|ệ|ȩ|ḝ|ę|ḙ|ḛ|ɇ|ɛ|ǝ",
+"ⓕ|ｆ|ḟ|ƒ|ꝼ",
+"ⓖ|ｇ|ǵ|ĝ|ḡ|ğ|ġ|ǧ|ģ|ǥ|ɠ|ꞡ|ᵹ|ꝿ",
+"ⓗ|ｈ|ĥ|ḣ|ḧ|ȟ|ḥ|ḩ|ḫ|ẖ|ħ|ⱨ|ⱶ|ɥ",
+"ⓘ|ｉ|ì|í|î|ĩ|ī|ĭ|ï|ḯ|ỉ|ǐ|ȉ|ȋ|ị|į|ḭ|ɨ|ı",
+"ⓙ|ｊ|ĵ|ǰ|ɉ",
+"ⓚ|ｋ|ḱ|ǩ|ḳ|ķ|ḵ|ƙ|ⱪ|ꝁ|ꝃ|ꝅ|ꞣ",
+"ⓛ|ｌ|ŀ|ĺ|ľ|ḷ|ḹ|ļ|ḽ|ḻ|ſ|ł|ƚ|ɫ|ⱡ|ꝉ|ꞁ|ꝇ",
+"ⓜ|ｍ|ḿ|ṁ|ṃ|ɱ|ɯ",
+"ⓝ|ｎ|ǹ|ń|ñ|ṅ|ň|ṇ|ņ|ṋ|ṉ|ƞ|ɲ|ŉ|ꞑ|ꞥ",
+"ⓞ|ｏ|ò|ó|ô|ồ|ố|ỗ|ổ|õ|ṍ|ȭ|ṏ|ō|ṑ|ṓ|ŏ|ȯ|ȱ|ö|ȫ|ỏ|ő|ǒ|ȍ|ȏ|ơ|ờ|ớ|ỡ|ở|ợ|ọ|ộ|ǫ|ǭ|ø|ǿ|ɔ|ꝋ|ꝍ|ɵ",
+"ⓟ|ｐ|ṕ|ṗ|ƥ|ᵽ|ꝑ|ꝓ|ꝕ",
+"ⓠ|ｑ|ɋ|ꝗ|ꝙ",
+"ⓡ|ｒ|ŕ|ṙ|ř|ȑ|ȓ|ṛ|ṝ|ŗ|ṟ|ɍ|ɽ|ꝛ|ꞧ|ꞃ",
+"ⓢ|ｓ|ś|ṥ|ŝ|ṡ|š|ṣ|ṧ|ṩ|ș|ş|ȿ|ꞩ|ꞅ|ẛ",
+"ⓣ|ｔ|ṫ|ẗ|ť|ṭ|ț|ţ|ṱ|ṯ|ŧ|ƭ|ʈ|ⱦ|ꞇ",
+"ⓤ|ｕ|ù|ú|û|ũ|ṹ|ū|ṻ|ŭ|ü|ǜ|ǘ|ǖ|ǚ|ủ|ů|ű|ǔ|ȕ|ȗ|ư|ừ|ứ|ữ|ử|ự|ụ|ṳ|ų|ṷ|ṵ|ʉ",
+"ⓥ|ｖ|ṽ|ṿ|ʋ|ꝟ|ʌ",
+"ⓦ|ｗ|ẁ|ẃ|ŵ|ẇ|ẅ|ẘ|ẉ|ⱳ",
+"ⓧ|ｘ|ẋ|ẍ",
+"ⓨ|ｙ|ỳ|ý|ŷ|ỹ|ȳ|ẏ|ÿ|ỷ|ẙ|ỵ|ƴ|ɏ|ỿ",
+"ⓩ|ｚ|ź|ẑ|ż|ž|ẓ|ẕ|ƶ|ȥ|ɀ|ⱬ|ꝣ",
+    ];
+
+    window.DiacriticsUtilConstants.DIACRITICS_REVERSE_MAP = {
+"ⱡ":"l",
+"ⱥ":"a",
+"ⱦ":"t",
+"ⱨ":"h",
+"ⱪ":"k",
+"ⱬ":"z",
+"ⱳ":"w",
+"ⱶ":"h",
+"ⓐ":"a",
+"ⓑ":"b",
+"ⓒ":"c",
+"ⓓ":"d",
+"ⓔ":"e",
+"ⓕ":"f",
+"ⓖ":"g",
+"ⓗ":"h",
+"ⓘ":"i",
+"ⓙ":"j",
+"ⓚ":"k",
+"ⓛ":"l",
+"ⓜ":"m",
+"ⓝ":"n",
+"ⓞ":"o",
+"ⓟ":"p",
+"à":"a",
+"ⓠ":"q",
+"á":"a",
+"ⓡ":"r",
+"â":"a",
+"ⓢ":"s",
+"ã":"a",
+"ⓣ":"t",
+"ä":"a",
+"ⓤ":"u",
+"å":"a",
+"ⓥ":"v",
+"ⓦ":"w",
+"ç":"c",
+"ⓧ":"x",
+"è":"e",
+"ⓨ":"y",
+"é":"e",
+"ⓩ":"z",
+"ê":"e",
+"ë":"e",
+"ì":"i",
+"í":"i",
+"î":"i",
+"ï":"i",
+"ñ":"n",
+"ò":"o",
+"ó":"o",
+"ô":"o",
+"õ":"o",
+"ö":"o",
+"ø":"o",
+"ù":"u",
+"ú":"u",
+"û":"u",
+"ü":"u",
+"ý":"y",
+"ÿ":"y",
+"ā":"a",
+"ă":"a",
+"ą":"a",
+"ć":"c",
+"ĉ":"c",
+"ċ":"c",
+"č":"c",
+"ď":"d",
+"đ":"d",
+"ē":"e",
+"ĕ":"e",
+"ė":"e",
+"ę":"e",
+"ě":"e",
+"ĝ":"g",
+"ğ":"g",
+"ġ":"g",
+"ģ":"g",
+"ĥ":"h",
+"ħ":"h",
+"ĩ":"i",
+"ī":"i",
+"ĭ":"i",
+"į":"i",
+"ı":"i",
+"ĵ":"j",
+"ķ":"k",
+"ĺ":"l",
+"ļ":"l",
+"ľ":"l",
+"ŀ":"l",
+"ł":"l",
+"ń":"n",
+"ņ":"n",
+"ň":"n",
+"ŉ":"n",
+"ō":"o",
+"ŏ":"o",
+"ő":"o",
+"ŕ":"r",
+"ŗ":"r",
+"ř":"r",
+"ś":"s",
+"ŝ":"s",
+"ş":"s",
+"š":"s",
+"ţ":"t",
+"ť":"t",
+"ŧ":"t",
+"ũ":"u",
+"ū":"u",
+"ŭ":"u",
+"ů":"u",
+"ű":"u",
+"ų":"u",
+"ŵ":"w",
+"ŷ":"y",
+"ᵹ":"g",
+"ź":"z",
+"ż":"z",
+"ᵽ":"p",
+"ž":"z",
+"ſ":"l",
+"ƀ":"b",
+"ƃ":"b",
+"ↄ":"c",
+"ƈ":"c",
+"ƌ":"d",
+"ƒ":"f",
+"ƙ":"k",
+"ƚ":"l",
+"ƞ":"n",
+"ơ":"o",
+"ƥ":"p",
+"ƭ":"t",
+"ư":"u",
+"ƴ":"y",
+"ƶ":"z",
+"ǎ":"a",
+"ǐ":"i",
+"ǒ":"o",
+"ǔ":"u",
+"ǖ":"u",
+"ǘ":"u",
+"ǚ":"u",
+"ǜ":"u",
+"ǝ":"e",
+"ǟ":"a",
+"ǡ":"a",
+"ǥ":"g",
+"ǧ":"g",
+"ǩ":"k",
+"ǫ":"o",
+"ǭ":"o",
+"ǰ":"j",
+"ǵ":"g",
+"ǹ":"n",
+"ǻ":"a",
+"ǿ":"o",
+"ȁ":"a",
+"ḁ":"a",
+"ȃ":"a",
+"ḃ":"b",
+"ḅ":"b",
+"ȅ":"e",
+"ḇ":"b",
+"ȇ":"e",
+"ḉ":"c",
+"ȉ":"i",
+"ḋ":"d",
+"ȋ":"i",
+"ḍ":"d",
+"ȍ":"o",
+"ḏ":"d",
+"ȏ":"o",
+"ḑ":"d",
+"ȑ":"r",
+"ḓ":"d",
+"ȓ":"r",
+"ḕ":"e",
+"ȕ":"u",
+"ḗ":"e",
+"ȗ":"u",
+"ḙ":"e",
+"ș":"s",
+"ḛ":"e",
+"ț":"t",
+"ḝ":"e",
+"ḟ":"f",
+"ȟ":"h",
+"ḡ":"g",
+"ḣ":"h",
+"ḥ":"h",
+"ȥ":"z",
+"ȧ":"a",
+"ḧ":"h",
+"ȩ":"e",
+"ḩ":"h",
+"ḫ":"h",
+"ȫ":"o",
+"ḭ":"i",
+"ȭ":"o",
+"ḯ":"i",
+"ȯ":"o",
+"ḱ":"k",
+"ȱ":"o",
+"ḳ":"k",
+"ȳ":"y",
+"ḵ":"k",
+"ḷ":"l",
+"ḹ":"l",
+"ḻ":"l",
+"ȼ":"c",
+"ḽ":"l",
+"ḿ":"m",
+"ȿ":"s",
+"ɀ":"z",
+"ṁ":"m",
+"ṃ":"m",
+"ṅ":"n",
+"ɇ":"e",
+"ṇ":"n",
+"ɉ":"j",
+"ṉ":"n",
+"ṋ":"n",
+"ɋ":"q",
+"ṍ":"o",
+"ɍ":"r",
+"ṏ":"o",
+"ɏ":"y",
+"ɐ":"a",
+"ṑ":"o",
+"ɓ":"b",
+"ṓ":"o",
+"ɔ":"o",
+"ṕ":"p",
+"ɖ":"d",
+"ɗ":"d",
+"ṗ":"p",
+"ṙ":"r",
+"ɛ":"e",
+"ṛ":"r",
+"ṝ":"r",
+"ṟ":"r",
+"ɠ":"g",
+"ṡ":"s",
+"ṣ":"s",
+"ɥ":"h",
+"ṥ":"s",
+"ṧ":"s",
+"ɨ":"i",
+"ṩ":"s",
+"ɫ":"l",
+"ṫ":"t",
+"ṭ":"t",
+"ɯ":"m",
+"ṯ":"t",
+"ɱ":"m",
+"ṱ":"t",
+"ɲ":"n",
+"ṳ":"u",
+"ɵ":"o",
+"ṵ":"u",
+"ṷ":"u",
+"ṹ":"u",
+"ṻ":"u",
+"ɽ":"r",
+"ṽ":"v",
+"ṿ":"v",
+"ẁ":"w",
+"ẃ":"w",
+"ẅ":"w",
+"ẇ":"w",
+"ʈ":"t",
+"ʉ":"u",
+"ẉ":"w",
+"ʋ":"v",
+"ẋ":"x",
+"ʌ":"v",
+"ẍ":"x",
+"ẏ":"y",
+"ẑ":"z",
+"ẓ":"z",
+"ẕ":"z",
+"ẖ":"h",
+"ẗ":"t",
+"ẘ":"w",
+"ẙ":"y",
+"ẚ":"a",
+"ẛ":"s",
+"ạ":"a",
+"ả":"a",
+"ấ":"a",
+"ầ":"a",
+"ẩ":"a",
+"ẫ":"a",
+"ậ":"a",
+"ắ":"a",
+"ằ":"a",
+"ẳ":"a",
+"ẵ":"a",
+"ặ":"a",
+"ẹ":"e",
+"ẻ":"e",
+"ẽ":"e",
+"ế":"e",
+"ề":"e",
+"ể":"e",
+"ễ":"e",
+"ệ":"e",
+"ỉ":"i",
+"ị":"i",
+"ọ":"o",
+"ỏ":"o",
+"ố":"o",
+"ồ":"o",
+"ổ":"o",
+"ỗ":"o",
+"ộ":"o",
+"ớ":"o",
+"ờ":"o",
+"ở":"o",
+"ỡ":"o",
+"ợ":"o",
+"ụ":"u",
+"ủ":"u",
+"ứ":"u",
+"ừ":"u",
+"ử":"u",
+"ữ":"u",
+"ự":"u",
+"ỳ":"y",
+"ỵ":"y",
+"ỷ":"y",
+"ỹ":"y",
+"ỿ":"y",
+"ꜿ":"c",
+"ａ":"a",
+"ꝁ":"k",
+"ｂ":"b",
+"ｃ":"c",
+"ꝃ":"k",
+"ｄ":"d",
+"ｅ":"e",
+"ꝅ":"k",
+"ｆ":"f",
+"ｇ":"g",
+"ꝇ":"l",
+"ｈ":"h",
+"ｉ":"i",
+"ꝉ":"l",
+"ｊ":"j",
+"ｋ":"k",
+"ꝋ":"o",
+"ｌ":"l",
+"ｍ":"m",
+"ꝍ":"o",
+"ｎ":"n",
+"ｏ":"o",
+"ｐ":"p",
+"ꝑ":"p",
+"ｑ":"q",
+"ｒ":"r",
+"ꝓ":"p",
+"ｓ":"s",
+"ｔ":"t",
+"ꝕ":"p",
+"ｕ":"u",
+"ｖ":"v",
+"ꝗ":"q",
+"ｗ":"w",
+"ｘ":"x",
+"ꝙ":"q",
+"ｙ":"y",
+"ｚ":"z",
+"ꝛ":"r",
+"ꝟ":"v",
+"ꝣ":"z",
+"ꝺ":"d",
+"ꝼ":"f",
+"ꝿ":"g",
+"ꞁ":"l",
+"ꞃ":"r",
+"ꞅ":"s",
+"ꞇ":"t",
+"ꞑ":"n",
+"ꞡ":"g",
+"ꞣ":"k",
+"ꞥ":"n",
+"ꞧ":"r",
+"ꞩ":"s",
+    };
+
+    window.DiacriticsUtilConstants.LIGATURES = {
+"a":{"a":"ꜳ","e":"æ|ǽ|ǣ","o":"ꜵ","u":"ꜷ","v":"ꜹ|ꜻ","y":"ꜽ",},
+"s":{"s":"ß",},
+"d":{"z":"ǳ|ǆ",},
+"t":{"z":"ꜩ",},
+"v":{"y":"ꝡ",},
+"h":{"v":"ƕ",},
+"l":{"j":"ǉ",},
+"n":{"j":"ǌ",},
+"o":{"i":"ƣ","o":"ꝏ","u":"ȣ",},
+    };
+
+    window.DiacriticsUtilConstants.LIGATURES_REVERSE_MAP = {
+"ꝡ":"vy",
+"ǣ":"ae",
+"ƣ":"oi",
+"ȣ":"ou",
+"æ":"ae",
+"ǆ":"dz",
+"ꜩ":"tz",
+"ǉ":"lj",
+"ǌ":"nj",
+"ꝏ":"oo",
+"ꜳ":"aa",
+"ǳ":"dz",
+"ꜵ":"ao",
+"ƕ":"hv",
+"ꜷ":"au",
+"ꜹ":"av",
+"ꜻ":"av",
+"ǽ":"ae",
+"ꜽ":"ay",
+"ß":"ss",
+    };
+
+    window.USER_GUIDE_URL = "https://www.actitime.com/user-guide/";
+
+    // This constant is used when TTA Feature is turned on with confirmation dialog
+    // and when rejecting/approving/revoking requests on Approve TT interface
+    var LONG_RPC_TIMEOUT = 300000;
+
+
+//    todo: move initialization to window.__GENERATED_CONSTANTS__ after all usages will be refactored
+    window.Features = {};
+    window.EnabledFeatures = {};
+    //TODO: evdokimov constants_js.jsp sometimes included twice
+    
+            window.EnabledFeatures.LTT = true;
+            window.Features["LTT"] = "LTT";
+    
+            window.EnabledFeatures.TTC = true;
+            window.Features["TTC"] = "TTC";
+    
+            window.EnabledFeatures.URA = true;
+            window.Features["URA"] = "URA";
+    
+            window.EnabledFeatures.BTY = true;
+            window.Features["BTY"] = "BTY";
+    
+            window.EnabledFeatures.BRA = true;
+            window.Features["BRA"] = "BRA";
+    
+            window.EnabledFeatures.EMA = true;
+            window.Features["EMA"] = "EMA";
+    
+            window.EnabledFeatures.EST = true;
+            window.Features["EST"] = "EST";
+    
+            window.EnabledFeatures.TTF = false;
+            window.Features["TTF"] = "TTF";
+    
+            window.EnabledFeatures.UGR = true;
+            window.Features["UGR"] = "UGR";
+    
+            window.EnabledFeatures.TZG = false;
+            window.Features["TZG"] = "TZG";
+    
+            window.EnabledFeatures.QBI = true;
+            window.Features["QBI"] = "QBI";
+    
+            window.EnabledFeatures.SUB = false;
+            window.Features["SUB"] = "SUB";
+    
+            window.EnabledFeatures.LVT = true;
+            window.Features["LVT"] = "LVT";
+    
+            window.EnabledFeatures.PTO = true;
+            window.Features["PTO"] = "PTO";
+    
+            window.EnabledFeatures.SDB = true;
+            window.Features["SDB"] = "SDB";
+    
+            window.EnabledFeatures.CLT = true;
+            window.Features["CLT"] = "CLT";
+    
+            window.EnabledFeatures.OVR = true;
+            window.Features["OVR"] = "OVR";
+    
+            window.EnabledFeatures.TTA = true;
+            window.Features["TTA"] = "TTA";
+    
+            window.EnabledFeatures.WAS = true;
+            window.Features["WAS"] = "WAS";
+    
+            window.EnabledFeatures.TWS = true;
+            window.Features["TWS"] = "TWS";
+    
+            window.EnabledFeatures.API = true;
+            window.Features["API"] = "API";
+    
+            window.EnabledFeatures.APUGR = true;
+            window.Features["APUGR"] = "APUGR";
+    
+            window.EnabledFeatures.APTZG = false;
+            window.Features["APTZG"] = "APTZG";
+    
+            window.EnabledFeatures.APPTO = true;
+            window.Features["APPTO"] = "APPTO";
+    
+            window.EnabledFeatures.APSDB = false;
+            window.Features["APSDB"] = "APSDB";
+    
+
+    var ReportFormat =
+    {
+        HTML: "HTML",
+        CSV: "CSV",
+        PDF: "PDF"
+    };
+
+    // TODO: Shouldn't it be ReportTimeFormat?
+    var TimeFormat = {
+        DECIMAL: 'DECIMAL',
+        TIME: 'TIME'
+    };
+
+    var BillingReportType = {
+        ALL_TIME_WITHIN_DATE_RANGE: 'ALL_TIME_WITHIN_DATE_RANGE',
+        ONLY_FOR_COMPLETED_TASKS: 'ONLY_FOR_COMPLETED_TASKS'
+    };
+
+    var ViewTTTableSortOptions = {
+        BY_DAYS : 'BY_DAYS',
+        BY_HIERARCHY: 'BY_HIERARCHY'
+    };
+
+    var ViewTTChartType = {
+        BY_DAYS : 'BY_DAYS',
+        BY_PROJECTS : 'BY_PROJECTS',
+        BY_CUSTOMERS : 'BY_CUSTOMERS'
+    };
+
+    var MAX_ALLOWED_DATE_FOR_TIME_TRACK = new Date(
+            2122, 11, 31, 12, 0, 0
+    );
+
+    var LeaveBalanceFilter = {
+        ALL: 'ALL',
+        PTO: 'PTO',
+        SICK: 'SICK'
+    };
+
+    window.DEFAULT_TIME_ZONE_GROUP_ID = -1;
+    window.USERS_WITHOUT_GROUP_ID = -1;
+    window.DEFAULT_PERMISSIONS_TEMPLATE_ID = -1;
+
+    var PastLeaveRequestsProcessType = {
+        AUTOMATICALLY_APPROVE_PAST_LEAVES: 'AUTOMATICALLY_APPROVE_PAST_LEAVES',
+        AUTOMATICALLY_REJECT_PAST_LEAVES:  'AUTOMATICALLY_REJECT_PAST_LEAVES'
+    };
+
+    var InviteColleaguesResult = {
+        OK_RESULT_CODE : 300,
+        WARNING_ACCOUNT_DISABLED_DUE_TO_LICENSE_TERMS : 301
+    };
+
+    var N_DAYS_IN_PAST_FOR_SHOW_APPROVED_REJECTED_REQUESTS = 30;
+
+    var MAX_RATE = 100000000;
+
+    var APReportChartType = {
+        LEAVE_TIME: 'LEAVE_TIME',
+        PTO_BALANCE: 'PTO_BALANCE',
+        SICK_BALANCE: 'SICK_BALANCE'
+    };
+
+    var APReportChartSortOption = {
+        BY_VALUES: 'BY_VALUES',
+        BY_CATEGORY: 'BY_CATEGORY'
+    };
+
+    var UserListSortConstant = {
+        ORDER_BY_USERNAME: 'ORDER_BY_USERNAME',
+        ORDER_BY_USER_GROUP: 'ORDER_BY_USER_GROUP',
+        ORDER_BY_TIME_ZONE_GROUP: 'ORDER_BY_TIME_ZONE_GROUP'
+    };
+
+    var TaskSortBy = {
+        CUSTOMER: 'CUSTOMER',
+        PROJECT: 'PROJECT',
+        TASK: 'TASK',
+        STATUS: 'STATUS',
+        WORKFLOW_STATUS: 'WORKFLOW_STATUS',
+        ESTIMATE: 'ESTIMATE',
+        DEADLINE: 'DEADLINE',
+        LAST_TRACKING_DATE: 'LAST_TRACKING_DATE'
+    };
+
+    var OTHER_USERS_ENTITY_ID = -1;
+    var OTHER_USER_GROUPS_ENTITY_ID = -2;
+
+    var UserManagementConstants ={};
+    UserManagementConstants.OVERTIME_AUTO = 0;
+    UserManagementConstants.OVERTIME_MANUAL = 1;
+    UserManagementConstants.OVERTIME_AUTO_HIDDEN = 2;
+    UserManagementConstants.OVERTIME_OFF = 3;
+
+    UserManagementConstants.USER_LIST_ORDER_BY_NAME = 1;
+    UserManagementConstants.USER_LIST_ORDER_BY_GROUP_NAME = 2;
+    UserManagementConstants.USER_LIST_ORDER_BY_TIME_ZONE_GROUP_NAME = 9;
+    UserManagementConstants.USER_LIST_ORDER_BY_PTO_BALANCE = 3;
+    UserManagementConstants.USER_LIST_ORDER_BY_APPROVED_PTO = 4;
+    UserManagementConstants.USER_LIST_ORDER_BY_PTO_CONTROL_STATUS = 5;
+
+    UserManagementConstants.USER_LIST_ORDER_BY_SICK_BALANCE = 6;
+    UserManagementConstants.USER_LIST_ORDER_BY_APPROVED_SICK = 7;
+    UserManagementConstants.USER_LIST_ORDER_BY_SICK_CONTROL_STATUS = 8;
+
+    UserManagementConstants.UGRFeature = 'UGR';
+    UserManagementConstants.OvertimeFeature = 'OVR';
+    UserManagementConstants.PTOFeature = 'PTO';
+    UserManagementConstants.SDBFeature = 'SDB';
+    UserManagementConstants.URAFeature = 'URA';
+    UserManagementConstants.BRAFeature = 'BRA';
+    UserManagementConstants.TTCFeature = 'TTC';
+    UserManagementConstants.ESTFeature = 'EST';
+    UserManagementConstants.OVRFeature = 'OVR';
+    UserManagementConstants.CLTFeature = 'CLT';
+    UserManagementConstants.LVTFeature = 'LVT';
+    UserManagementConstants.BTYFeature = 'BTY';
+    UserManagementConstants.TTAFeature = 'TTA';
+    UserManagementConstants.TZGFeature = 'TZG';
+    UserManagementConstants.LTTFeature = 'LTT';
+    UserManagementConstants.WASFeature = 'WAS';
+    UserManagementConstants.LICENSE_UNLIM = -1;
+    UserManagementConstants.MIN_RECORDS_PER_PAGE = 10;
+    UserManagementConstants.USER_WITHOUT_GROUP = -1;
+
+    UserManagementConstants.ACCOUNT_SETTINGS_TAB_NUM = 1;
+    UserManagementConstants.PTO_SETTINGS_TAB_NUM = 2;
+    UserManagementConstants.SICK_DAYS_SETTINGS_TAB_NUM = 3;
+    UserManagementConstants.WORK_ASSIGNMENTS_TAB_NUM = 4;
+
+    UserManagementConstants.RESULT_CODE_SUCCESS =200;
+    UserManagementConstants.WARNING_ACCOUNT_DISABLED_DUE_TO_LICENSE_TERMS = 300;
+    UserManagementConstants.WARNING_ACCOUNT_DISABLED_IN_OTHER_PRODUCT_DUE_TO_LICENSE_TERMS = 309;
+    UserManagementConstants.WARNING_ACCOUNT_DISABLED_IN_BOTH_PRODUCTS_DUE_TO_LICENSE_TERMS = 310;
+    UserManagementConstants.WARNING_ACCOUNT_DISABLED_DUE_TO_FUTURE_HIRE_DATE = 311;
+    UserManagementConstants.WARNING_ACCOUNT_DISABLED_IN_OTHER_PRODUCT_DUE_TO_FUTURE_HIRE_DATE = 312;
+    UserManagementConstants.WARNING_ACCOUNT_DISABLED_IN_BOTH_PRODUCTS_DUE_TO_FUTURE_HIRE_DATE = 313;
+    UserManagementConstants.WARNING_NO_RIGHT_TO_EDIT_STATUS_IN_OTHER_PRODUCT = 307;
+    UserManagementConstants.WARNING_MANAGE_BALANCE_RIGHT_REVOKED = 303;
+    UserManagementConstants.WARNING_MANAGE_ACCOUNT_SETTINGS_RIGHT_REVOKED = 304;
+    UserManagementConstants.WARNING_USER_GROUP_NO_LONGER_EXISTS = 305;
+    UserManagementConstants.WARNING_TIME_ZONE_GROUP_NO_LONGER_EXISTS = 314;
+    UserManagementConstants.WARNING_PTO_FEATURE_DISABLED = 306;
+    UserManagementConstants.ERROR_NO_RIGHTS_TO_MANAGE_ACCOUNT_SETTINGS = 400;
+    UserManagementConstants.ERROR_DUPLICATE_USERNAME =401;
+    UserManagementConstants.ERROR_NO_RIGHTS_TO_MANAGE_PTO_AND_SICK = 403;
+    UserManagementConstants.ERROR_PTO_FEATURE_DISABLED = 404;
+    UserManagementConstants.ERROR_PTO_CONTROL_DISABLED = 408;
+    UserManagementConstants.ERROR_SICK_CONTROL_DISABLED = 409;
+    UserManagementConstants.ERROR_NO_SUCH_USER = 405;
+    UserManagementConstants.PASSWORD_RESTRICTIONS_VIOLATED = 501;
+    UserManagementConstants.PASSWORD_EMPTY = 502;
+    UserManagementConstants.PASSWORD_COPY_EMPTY = 503;
+    UserManagementConstants.PASSWORD_COPY_MISMATCH = 504;
+    UserManagementConstants.ERROR_CANT_DELETE = 407;
+    UserManagementConstants.ERROR_BALANCE_CAP_EXCEEDED = 411;
+
+    UserManagementConstants.ERROR_USER_EMAIL_IS_INVALID = 421;
+
+    UserManagementConstants.ERROR_CANNOT_DISABLE_LAST_USER_MANAGER_IN_OTHER_PRODUCT = 417;
+
+    UserManagementConstants.USER_GROUP_NOT_ASSIGNED_ID = -1;
+    UserManagementConstants.DEFAULT_TIME_ZONE_GROUP_ID = -1;
+
+    UserManagementConstants.UM_RESULT_CODE_DUPLICATE_USERNAME = 401;
+
+
+    UserManagementConstants.REPORT_TO_REPORT_NAME_MAP = {
+        STAFF_PERFORMANCE :    'Staff Performance Report',
+        TIME_TRACK_IN_DETAIL : 'Time-Track In Detail Report',
+        ESTIMATED_VS_ACTUAL :  'Estimated vs. Actual Time Report',
+        OVERTIME:              'Time Balance & Overtime Report',
+        LEAVE_TIME :           'Leave Time',
+        COST_OF_WORK :         'Cost of Work Report',
+        BILLING_SUMMARY :      'Billing Summary Report',
+        PROFIT_LOSS :          'Profit / Loss Report',
+        INVOICING :            'Invoice Export'
+    };
+
+    UserManagementConstants.WorkAssignmentsFilter = {
+        ALL: 'ALL',
+        ALL_SCOPE: 'ALL_SCOPE',
+        NO_TASK: 'NO_TASK'
+    }
+
+    UserManagementConstants.ManagementFilter = {
+        ALL: 'ALL',
+        ALL_PERMISSIONS: 'ALL_PERMISSIONS',
+        NO_PERMISSIONS: 'NO_PERMISSIONS',
+        ALL_TEAM: 'ALL_TEAM',
+        NO_TEAM: 'NO_TEAM',
+        NO_ACCESS_TO_TEAM: 'NO_ACCESS_TO_TEAM',
+        ALL_SCOPE: 'ALL_SCOPE',
+        NO_SCOPE: 'NO_SCOPE',
+        NO_ACCESS_TO_SCOPE: 'NO_ACCESS_TO_SCOPE',
+    }
+
+    // since we use ES6 modules - put all server constants into global variable below
+    window.__GENERATED_CONSTANTS__ = {
+        BASE_PATH: '/',
+        CURRENT_PRODUCT: 'actiTIME',
+        CLIENT_CODE: 'demo',
+        DEFAULT_TIME_ZONE_GROUP_ID: -1,
+        USERS_WITHOUT_GROUP_ID: -1,
+        DEFAULT_PERMISSIONS_TEMPLATE_ID: -1,
+
+        GROUP_NEW_OR_NOT_KNOWN: -2,
+
+        BACK_OFFICE_URL: 'null',
+        BACK_OFFICE_PROCESS_STATUS_URL: 'null',
+
+        UserHierarchyAssignmentType: {
+            WORK: 'WORK',
+            MANAGEMENT: 'MANAGEMENT',
+        },
+        UserHierarchyAssignmentEntityType: {
+            CUSTOMER: 'CUSTOMER',
+            PROJECT: 'PROJECT',
+            TASK: 'TASK'
+        },
+        CopyWorkAssignmentOptions: {
+            APPEND: 'APPEND',
+            OVERWRITE: 'OVERWRITE',
+        },
+        CustomersProjectsSelectionQualifier: {
+            ALL: 'ALL',
+            ALL_ACTIVE: 'ALL_ACTIVE',
+            SELECTED: 'SELECTED'
+        },
+        EntityType: {
+            CUSTOMER: 'CUSTOMER',
+            PROJECT: 'PROJECT',
+            TASK: 'TASK'
+        },
+        BulkMoveTypes: {
+            TO_OPEN: 'TO_OPEN',
+            ARCHIVED_TO_ARCHIVED: 'ARCHIVED_TO_ARCHIVED',
+            OPEN_TO_ARCHIVED_WITH_COMPLETION: 'OPEN_TO_ARCHIVED_WITH_COMPLETION',
+            OPEN_TO_ARCHIVED_WITH_RESTORE: 'OPEN_TO_ARCHIVED_WITH_RESTORE',
+        },
+
+//        TODO: replace audit constants ids with enums
+        AuditActionTypes: (function() {
+            var types = {};
+            types['CREATED'] = 1
+            types['DELETED'] = 2
+            types['UPDATED'] = 3
+            types['RENAMED'] = 4
+            types['MOVED'] = 5
+            types['ARCHIVED'] = 6
+            types['RESTORED'] = 7
+            types['DESCRIPTION_CHANGED'] = 8
+            types['DEADLINE_CHANGED'] = 9
+            types['ESTIMATE_CHANGED'] = 10
+            types['BILLING_TYPE_CHANGED'] = 11
+            types['CSV_TASKS_IMPORTED'] = 12
+            types['WORKFLOW_STATUS_AND_TYPE_CHANGED'] = 13
+            types['WORKFLOW_STATUS_ONLY_CHANGED'] = 14
+            types['BULK_TASKS_MOVE'] = 15
+            types['BULK_TASKS_COPY'] = 16
+            types['BULK_TASKS_DELETE'] = 17
+            types['BULK_TASKS_CHANGE_STATUS'] = 18
+            types['COPIED'] = 19
+            types['ROOT_CREATED'] = 20
+            
+            return types;
+        })(),
+        AuditEntityTypes: (function() {
+            var entities = {};
+             entities['CUSTOMER'] = 1
+             entities['PROJECT'] = 2
+             entities['TASK'] = 3
+             entities['TYPE_OF_WORK'] = 4
+             entities['JOB'] = 5
+             entities['USER'] = 6
+             entities['WORKFLOW_STATUS'] = 7
+            
+            return entities;
+        })(),
+
+//        todo: replace for cycle with explicit enumeration, after create popup integration
+        AccessRight: (function() {
+            return {
+            ACCOUNT_SETTINGS_MANAGER:20,
+LEAVE_TIME_MANAGER:21,
+LEAVE_BALANCE_MANAGER:22,
+SUBMIT_TIME_TRACK:9,
+SUBMIT_OTHER_USER_TIME_TRACK:12,
+LOCK_TIME_TRACK:10,
+GENERATE_MONEY_REPORTS:8,
+MANAGE_USERS:5,
+MANAGE_GENERAL_SETTINGS:11,
+MANAGE_PTO_AND_SICK:14,
+EDIT_HIERARCHY:23,
+MANAGE_LICENSE:24,
+}
+        })(),
+
+        Features: window.Features,
+
+        EnabledFeatures: window.EnabledFeatures,
+
+        UserManagementConstants: window.UserManagementConstants,
+
+        Product: window.Product,
+
+        WeekApprovalStatus: {
+            NOT_READY: "NOT_READY",
+            READY: "READY",
+            APPROVED: "APPROVED",
+            REJECTED: "REJECTED"
+        },
+
+        CalendarFrequencyType: {
+
+            WEEKLY:       "WEEKLY",
+            BIWEEKLY:     "BIWEEKLY",
+            SEMI_MONTHLY: "SEMI_MONTHLY",
+            MONTHLY:      "MONTHLY",
+            YEARLY:       "YEARLY",
+            ON_HIRE_DATE:       "ON_HIRE_DATE",
+
+            descriptionFor: {
+                "WEEKLY":       "weekly",
+                "BIWEEKLY":     "biweekly",
+                "SEMI_MONTHLY": "semi-monthly",
+                "MONTHLY":      "monthly",
+                "YEARLY":       "yearly",
+                "ON_HIRE_DATE": "on hire date"
+            },
+
+            parametersFormatterFor: {
+                "WEEKLY":       function(parameters) {
+                    return messageResource.getMessage("pto_rules_editor.on") + " " + Date.dayNamesShort[ parseInt(parameters[0]) - 1];
+                },
+                "BIWEEKLY":     function(parameters) {
+                    // TODO
+                },
+                "SEMI_MONTHLY": function(parameters) {
+                    return messageResource.getMessage("pto_rules_editor.on") + " " + formatMonthDay(parameters[0]) + ' & ' + formatMonthDay(parameters[1]);
+                },
+                "MONTHLY":      function(parameters) {
+                    return messageResource.getMessage("pto_rules_editor.on") + " " + formatMonthDay(parameters[0]);
+                },
+                "YEARLY":       function(parameters) {
+                    var date = Date.create(2000, Number(parameters[0]) - 1, Number(parameters[1]));
+                    return messageResource.getMessage("pto_rules_editor.on") + " " + date.format("M d");
+                },
+                "ON_HIRE_DATE":       function(parameters) {
+                    var hireDate = parameters[0];
+                    if(!hireDate || "" == hireDate) {
+                        return "";
+                    }
+                    var parsedDate = new Date.parseJSONDate(hireDate);
+                    return messageResource.getMessage("balance_rules_editor.hire_date", [parsedDate.format("M d")]);
+                }
+            }
+        },
+
+        ProductVersion: {
+            isOlVersion: 'true' == 'true',
+            isDemoVersion: 'true' == 'true'
+        },
+
+        LicenseInfo: {
+            isAtActive: 'true' == 'true',
+            isApActive: 'true' == 'true',
+        },
+        PRODUCTS_INTEGRATED: 'true' == 'true',
+
+        PRODUCT_SWITCHER_URL: '',
+
+        BalanceType: {
+            PTO: 'PTO',
+            SICK: 'SICK'
+        },
+
+        UserListConfirmationConstants: {
+            LAST_APPROVER_DISABLED : 1,
+            LAST_APPROVER_RIGHT_REVOKED :6,
+            LAST_OTHER_PRODUCT_APPROVER_DISABLED : 2,
+            LAST_APPROVER_DELETED : 3,
+            LAST_OTHER_PRODUCT_APPROVER_DELETED : 4,
+            HAS_LEAVE_REQUESTS : 5
+        },
+
+        EditTaskServiceResultCodes: {
+            success: 0,
+            taskNotExists: 1,
+            billingTypeNotExists: 2,
+            billingTypeIsArchived: 3,
+            projectNotExists: 4,
+            projectIsArchived: 5,
+            projectNotAvailable: 6,
+            taskExists: 7,
+            noRightsToReopenProject: 8,
+            billingTypeFeatureOff: 9,
+            estimateFeatureOff: 10,
+            workflowStatusNotExists: 11,
+            workflowStatusChanged: 13,
+            noRightsToManageProject: 12
+        },
+
+        TableTasksConstants: {
+            OPEN_TASK_EXISTS_ERROR: 5,
+            COMPLETED_TASK_EXISTS_ERROR: 6,
+            UNKNOWN_TASK_EXISTS_ERROR: 7,
+            BILLING_TYPE_DELETED_OR_ARCHIVED_ERROR: 10
+        },
+
+        LeaveTimeRequestConstants: {
+            RequestStatus: window.LeaveTimeRequestStatus,
+            NEW_REQUEST_ID: -546,
+        },
+
+        LeaveBalanceCorrectionType: {
+            ADD: "ADD",
+            SUB: "SUB",
+            SET: "SET"
+        },
+
+        LeaveBalanceUnits: {
+            HOURS: "HOURS",
+            DAYS:  "DAYS"
+        },
+
+        TaskSortBy: {
+            CUSTOMER: 'CUSTOMER',
+            PROJECT: 'PROJECT',
+            TASK: 'TASK',
+            STATUS: 'STATUS',
+            WORKFLOW_STATUS: 'WORKFLOW_STATUS',
+            ESTIMATE: 'ESTIMATE',
+            DEADLINE: 'DEADLINE',
+            LAST_TRACKING_DATE: 'LAST_TRACKING_DATE',
+            TYPE_OF_WORK: 'TYPE_OF_WORK',
+            CREATION_DATE: 'CREATION_DATE',
+            SPENT_TIME: 'SPENT_TIME'
+        },
+
+        NON_BILLABLE_DEFAULT_TYPE_ID: 2,
+
+        PaperSize: {
+            LETTER: 'LETTER',
+            A4: 'A4'
+        },
+
+        PaperOrientation: {
+            PORTRAIT: 'PORTRAIT',
+            LANDSCAPE: 'LANDSCAPE'
+        },
+
+        LeaveTypeColumnConfig: {
+            LEAVE_TIME_ONLY: 'LEAVE_TIME_ONLY',
+            BALANCES_ONLY: 'BALANCES_ONLY',
+            LEAVE_TIME_AND_BALANCES: 'LEAVE_TIME_AND_BALANCES'
+        },
+
+        LeaveTypeBalanceQualifier: {
+            SICK_DAYS_ONLY: 'SICK_DAYS_ONLY',
+            PTO_ONLY: 'PTO_ONLY',
+            PTO_AND_SICK_DAYS: 'PTO_AND_SICK_DAYS'
+        },
+
+        LeaveTypeSelectionQualifier: {
+            ALL: 'ALL',
+            SELECTED: 'SELECTED'
+        },
+
+        ReportGroupingLevel: {
+            NONE: "NONE",
+
+            USER: "USER",
+            USER_GROUP: "USER_GROUP",
+            TIME_ZONE_GROUP: "TIME_ZONE_GROUP",
+            LEAVE_TYPE: "LEAVE_TYPE",
+            USER_RATE: "USER_RATE",
+
+            CUSTOMER: "CUSTOMER",
+            PROJECT: "PROJECT",
+            PROJECT_NAME: "PROJECT_NAME",
+            TASK: "TASK",
+            TASK_NAME: "TASK_NAME",
+
+            BILLING_TYPE: "BILLING_TYPE",
+
+            TT_COMMENTS: "TT_COMMENTS",
+
+            TASK_AND_TT_COMMENTS: "TASK_AND_TT_COMMENTS",
+            PROJECT_AND_TT_COMMENTS: "PROJECT_AND_TT_COMMENTS",
+            CUSTOMER_AND_TT_COMMENTS: "CUSTOMER_AND_TT_COMMENTS",
+
+            DATE: "DATE",
+            WEEK: "WEEK",
+            MONTH: "MONTH"
+        },
+
+        ReportType: {
+            STAFF_PERFORMANCE: "STAFF_PERFORMANCE",
+            OVERTIME: "OVERTIME",
+            LEAVE_TIME: "LEAVE_TIME",
+            TIME_TRACK_IN_DETAIL: "TIME_TRACK_IN_DETAIL",
+            ESTIMATED_VS_ACTUAL: "ESTIMATED_VS_ACTUAL",
+
+            BILLING_SUMMARY: "BILLING_SUMMARY",
+            INVOICING: "INVOICING",
+            COST_OF_WORK: "COST_OF_WORK",
+            PROFIT_LOSS: "PROFIT_LOSS"
+        },
+
+        ReportChartType: {
+            TOTAL_WORKING_HOURS: 'TOTAL_WORKING_HOURS',
+            APPROVED_WORKING_HOURS: 'APPROVED_WORKING_HOURS',
+            LEAVE_HOURS: 'LEAVE_HOURS',
+            PTO_BALANCE: 'PTO_BALANCE',
+            SICK_DAYS_BALANCE: 'SICK_DAYS_BALANCE',
+            OVERTIME_HOURS: 'OVERTIME_HOURS',
+            COST_OF_WORK: 'COST_OF_WORK',
+            BILLABLE_AMOUNTS: 'BILLABLE_AMOUNTS'
+        },
+
+        ChartType: {
+            VERTICAL_BAR: 'VERTICAL_BAR',
+            HORIZONTAL_BAR: 'HORIZONTAL_BAR',
+            PIE_CHART: 'PIE_CHART'
+        },
+
+        ChartSortOptions: {
+            ALPHABETICALLY : 'ALPHABETICALLY',
+            BY_VALUES : 'BY_VALUES',
+            CHRONOLOGICALLY : 'CHRONOLOGICALLY'
+        },
+
+        REPORT_LOGO_PATH: '/img/default/reportlogo.png?ts=1663118542980',
+
+        OTHER_USERS_ENTITY_ID: window.OTHER_USERS_ENTITY_ID,
+        OTHER_USER_GROUPS_ENTITY_ID: window.OTHER_USER_GROUPS_ENTITY_ID,
+
+        PROJECT_CONSTANTS: {
+            SELECT_CUSTOMER_OPTION_INDEX: -1,
+            NEW_CUSTOMER_OPTION_INDEX: -2,
+            CUSTOMER_WAS_ARCHIVED: 201,
+            CUSTOMER_WAS_DELETED: 202,
+            USERS_WAS_DELETED: 203,
+            RESULT_CODE_SUCCESS: 200
+        },
+
+        CREATE_TASKS_CONSTANTS: {
+            SELECT_CUSTOMER_OPTION_INDEX: -1,
+            NEW_CUSTOMER_OPTION_INDEX: -2,
+            ALL_ACTIVE_CUSTOMERS_OPTION_INDEX: -3,
+
+            SELECT_PROJECT_OPTION_INDEX: -4,
+            NEW_PROJECT_OPTION_INDEX: -5,
+            ALL_ACTIVE_PROJECTS_OPTION_INDEX: -6,
+            SELECTED_PROJECTS_OPTION_INDEX: -7,
+
+            CUSTOMER_IS_NOT_EXIST_ERROR: 14,
+            CUSTOMER_IS_NOT_ASSIGNED_ERROR: 22,
+            CUSTOMER_EXISTS_ERROR: 16,
+            CUSTOMER_IS_ARCHIVED_ERROR: 15,
+            NO_ACTIVE_CUSTOMERS_ERROR: 20,
+
+            PROJECT_IS_NOT_EXIST_ERROR: 18,
+            PROJECT_IS_NOT_ASSIGNED_ERROR: 23,
+            PROJECT_EXISTS_ERROR: 17,
+            PROJECT_IS_ARCHIVED_ERROR: 19,
+            NO_ACTIVE_PROJECTS_ERROR: 21
+        },
+
+        WorkflowStatusType: {
+            OPEN: 'OPEN',
+            COMPLETED: 'COMPLETED'
+        },
+
+        MAX_RATE: 100000000,
+
+        DateRangeSelectionQualifier: {
+            CURRENT_MONTH: "CURRENT_MONTH",
+            CURRENT_MONTH_TILL_TODAY: "CURRENT_MONTH_TILL_TODAY",
+            PREVIOUS_MONTH: "PREVIOUS_MONTH",
+            NEXT_MONTH: "NEXT_MONTH",
+            CURRENT_WEEK: "CURRENT_WEEK",
+            CURRENT_WEEK_TILL_TODAY: "CURRENT_WEEK_TILL_TODAY",
+            NEXT_WEEK: "NEXT_WEEK",
+            PREVIOUS_WEEK: "PREVIOUS_WEEK",
+            CURRENT_AND_PREVIOUS_WEEK: "CURRENT_AND_PREVIOUS_WEEK",
+            CURRENT_AND_TWO_PREVIOUS_WEEKS: "CURRENT_AND_TWO_PREVIOUS_WEEKS",
+            LAST_7_DAYS: "LAST_7_DAYS",
+            LAST_14_DAYS: "LAST_14_DAYS",
+            LAST_21_DAYS: "LAST_21_DAYS",
+            CURRENT_YEAR: "CURRENT_YEAR",
+            CURRENT_AND_NEXT_YEAR: "CURRENT_AND_NEXT_YEAR",
+            NEXT_YEAR: "CURRENT_AND_NEXT_YEAR",
+            CURRENT_YEAR_TILL_TODAY: "CURRENT_YEAR_TILL_TODAY",
+            PREVIOUS_YEAR: "PREVIOUS_YEAR",
+            CURRENT_QUARTER: "CURRENT_QUARTER",
+            PREVIOUS_QUARTER: "PREVIOUS_QUARTER",
+            CUSTOM: "CUSTOM"
+        },
+
+        EvaDateQualifier: {
+            TODAY: "TODAY",
+            YESTERDAY: "YESTERDAY",
+
+            LAST_MONDAY: "LAST_MONDAY",
+            LAST_TUESDAY: "LAST_TUESDAY",
+            LAST_WEDNESDAY: "LAST_WEDNESDAY",
+            LAST_THURSDAY: "LAST_THURSDAY",
+            LAST_FRIDAY: "LAST_FRIDAY",
+            LAST_SATURDAY: "LAST_SATURDAY",
+            LAST_SUNDAY: "LAST_SUNDAY",
+
+            END_OF_PREVIOUS_MONTH: "END_OF_PREVIOUS_MONTH",
+            BEGINNING_OF_CURRENT_MONTH: "BEGINNING_OF_CURRENT_MONTH",
+
+            CUSTOM: "CUSTOM"
+        },
+
+        SubmitTTForm: {
+            ADD_TASKS_ACTION: 'addTasks',
+            HIGHLIGHT_TASKS_ACTION: 'highlightTasks',
+            REMOVE_DELETED_TASK: 'removeDeletedTask',
+            ADD_ALL_PREVIOUS_WEEK_TASKS_ACTION: 'addAllPreviousWeekTasks',
+            ADD_REPORTED_PREVIOUS_WEEK_TASKS_ACTION: 'addReportedPreviousWeekTasks',
+            SHOW_NEXT_READY_WEEK: 'showNextReadyWeek',
+            SHOW_PREV_READY_WEEK: 'showPrevReadyWeek',
+            ENTER_TT_RELOAD_ACTION: 'reloadPage',
+            REOPEN_TASK_ACTION: 'reopenTask'
+        },
+
+        TimeApprovalStatus: {
+            APPROVED :     'APPROVED',
+            NOT_APPROVED : 'NOT_APPROVED',
+            BOTH :         'BOTH'
+        },
+
+        TimeFormat: {
+            DECIMAL: 'DECIMAL',
+            TIME: 'TIME'
+        },
+
+        ReportConfigConstants: {
+            LEAVES_REPORT_ALL_SELECTED_LEAVES_DELETED: 568,
+            NO_RIGHTS_FOR_MANAGING_PTO_AND_SICK: 570,
+            ALL_SELECTED_FOR_REPORT_USERS_WERE_DELETED: 567,
+            ALL_SELECTED_FOR_REPORT_PROJECTS_ARE_UNAVAILABLE_OR_DELETED: 569,
+            OVERTIME_FOR_ALL_SELECTED_USERS_WAS_DISABLED: 571,
+            NO_BILLABLE_TASKS: 572,
+            SAVED_REPORTS_PAGE_URL: '/reports/reports.do'
+        },
+
+        StaffPerformanceColumnsConfig: {
+            USERS_ONLY : 'USERS_ONLY',
+            GROUPS_ONLY : 'GROUPS_ONLY',
+            USERS_BY_GROUPS_WITHOUT_SUBTOTALS : 'USERS_BY_GROUPS_WITHOUT_SUBTOTALS',
+            USERS_BY_GROUPS_WITH_SUBTOTALS : 'USERS_BY_GROUPS_WITH_SUBTOTALS',
+            TZ_GROUPS_ONLY:'TZ_GROUPS_ONLY',
+            USERS_BY_TIME_ZONE_GROUPS_WITHOUT_SUBTOTALS:'USERS_BY_TZ_GROUPS_WITHOUT_SUBTOTALS',
+            USERS_BY_TIME_ZONE_GROUPS_WITH_SUBTOTALS:'USERS_BY_TZ_GROUPS_WITH_SUBTOTALS'
+        },
+
+        BillingSummaryReportInfo: {
+            TIME_ON_BILLABLE_TASKS: 'TIME_ON_BILLABLE_TASKS',
+            TIME_ON_NON_BILLABLE_TASKS: 'TIME_ON_NON_BILLABLE_TASKS',
+            TIME_ON_BOTH_BILLABLE_AND_NON_BILLABLE_TASKS: 'TIME_ON_BOTH_BILLABLE_AND_NON_BILLABLE_TASKS',
+            BILLABLE_AMOUNT: 'BILLABLE_AMOUNT',
+            BILLABLE_TIME_AND_BILLABLE_AMOUNT: 'BILLABLE_TIME_AND_BILLABLE_AMOUNT',
+            BILLABLE_TIME_AND_BILLABLE_AMOUNT_WITH_AVERAGE_RATES: 'BILLABLE_TIME_AND_BILLABLE_AMOUNT_WITH_AVERAGE_RATES'
+        },
+
+        ReportColumnsFormatCostOfWork: {
+            USERS_ONLY : "USERS",
+            GROUPS_ONLY: "GROUPS",
+            USERS_BY_GROUPS: "USERS_BY_GROUPS"
+        },
+
+        UserTeamAssignmentType: {
+            SELECTED:  "SELECTED",
+            ALL: "ALL",
+            NO: "NO",
+        },
+
+        ManagementAssignmentsSelection: {
+            SELECTED: "SELECTED",
+            ALL: "ALL",
+            NO: "NO",
+        },
+
+        OvertimeTrackingLevel: {
+            HIDDEN: "0",
+            READONLY: "1",
+            TRUSTED: "2",
+        },
+
+        UserManagementAdditionalData: {
+            MANAGE_ASSIGNMENTS_DATA: "manageAssignmentsData",
+            TEAM_ASSIGNMENTS_DATA: "userTeamAssignmentsData",
+            USERS_WITHOUT_APPROVERS_DATA: "usersWithoutApprovers",
+            ALL_USERS_AUTOAPPROVED: "allUsersApproved",
+            MANAGEMENT_ASSIGNMENTS_COUNTERS: "managementAssignmentsCounters",
+            WORK_ASSIGNMENTS_COUNTERS: "workAssignmentsCounters",
+            ALL_ASSIGNED_INFO: "allAssignedInfo",
+            RATES: "rates",
+            CONCURRENTLY_REMOVED_ENTITIES: "concurrentlyRemovedEntities",
+            ACTIVE_LEAVE_TYPES: "activeLeaveTypes",
+            TIME_ZONE_GROUPS_DATA: "allTimeZoneGroups",
+        },
+
+        EntityTextLimits: {
+            MAX_CPT_NAME: 255,
+            MAX_CPT_DESCRIPTION: 2000,
+            MAX_CPT_COMMENT: 5000,
+            MAX_TT_COMMENT: 2000,
+            MAX_BILLING_TYPE_NAME: 80,
+            MAX_LEAVE_TYPE_NAME: 80,
+            MAX_WORKFLOW_STATUS_NAME: 80
+        },
+
+        PasswordValidatorId: {
+            LENGTH_VALIDATOR: "password_validation.length",
+            LOWERCASE_VALIDATOR: "password_validation.characters.lowercase",
+            UPPERCASE_VALIDATOR: "password_validation.characters.uppercase",
+            NUMBER_VALIDATOR: "password_validation.characters.number",
+            SPECIAL_VALIDATOR: "password_validation.characters.special",
+
+        },
+        PasswordValidators: {
+            MIN_PASSWORD_LENGTH: 4,
+            MAX_PASSWORD_LENGTH: 255,
+            PASSWORD_VALIDATION_RESULT_JSON: "passwordValidationResultJson"
+        },
+        SettingsManagement: {
+            LAST_ADMIN_IN_ACTITIME: 1,
+            LAST_ADMIN_IN_ACTIPLANS: 2,
+        },
+        ProductWebSiteURLs: {
+            CURRENT_PRODUCT_SITE_URL: 'https://www.actitime.com/',
+            USER_GUIDE_URL: 'https://www.actitime.com/user-guide/',
+            QBI_INTEGRATOR_GUIDE_URL: 'https://www.actitime.com/timesheet-quickbooks-integration',
+            SERVICE_AGREEMENT_URL: 'https://www.actitime.com/service-agreement',
+            DATA_PROCESSING_AGREEMENT_URL: 'https://www.actitime.com/data-processing',
+
+            OTHER_PRODUCT_WEB_SITE_URL: 'https://www.actiplans.com/',
+            OTHER_PRODUCT_SERVICE_AGREEMENT_URL: 'https://www.actiplans.com/service-agreement.html',
+            OTHER_PRODUCT_DATA_PROCESSING_AGREEMENT_URL: 'https://www.actiplans.com/data-processing.html',
+            OTHER_PRODUCT_INTEGRATION_URL: 'https://www.actitime.com/actiplans-integration',
+        },
+
+        RequestVerification: {
+            FORM_INPUT_NAME: 'org.apache.struts.taglib.html.TOKEN',
+            FORM_INPUT_VALUE: 'null',
+        },
+
+        EnterTT: {
+            PAGE_URL: '/user/submit_tt.do',
+            IS_NEXT: false
+        }
+    }
+
+    // TODO temporary
+    var LeaveBalanceUnits = __GENERATED_CONSTANTS__.LeaveBalanceUnits;
+    var CalendarFrequencyType = window.__GENERATED_CONSTANTS__.CalendarFrequencyType
+    window.isOlVersion = __GENERATED_CONSTANTS__.ProductVersion.isOlVersion;
+    window.isDemoVersion = __GENERATED_CONSTANTS__.ProductVersion.isDemoVersion;
+    var BalanceType = __GENERATED_CONSTANTS__.BalanceType;
+    var UserListConfirmationConstants = __GENERATED_CONSTANTS__.UserListConfirmationConstants;
+    var PaperSize = __GENERATED_CONSTANTS__.PaperSize;
+    var PaperOrientation = __GENERATED_CONSTANTS__.PaperOrientation;
+    window.ReportGroupingLevel = __GENERATED_CONSTANTS__.ReportGroupingLevel
+    window.ReportType = __GENERATED_CONSTANTS__.ReportType
+    window.ReportChartType = __GENERATED_CONSTANTS__.ReportChartType
+    window.ChartType = __GENERATED_CONSTANTS__.ChartType
+    window.LeaveTypeColumnConfig = __GENERATED_CONSTANTS__.LeaveTypeColumnConfig
+    window.LeaveTypeBalanceQualifier = __GENERATED_CONSTANTS__.LeaveTypeBalanceQualifier
+    window.LeaveTypeSelectionQualifier = __GENERATED_CONSTANTS__.LeaveTypeSelectionQualifier
+    window.DateRangeSelectionQualifier = __GENERATED_CONSTANTS__.DateRangeSelectionQualifier
+    window.EvaDateQualifier = __GENERATED_CONSTANTS__.EvaDateQualifier
+    window.TimeApprovalStatus = __GENERATED_CONSTANTS__.TimeApprovalStatus
+    window.TimeFormat = __GENERATED_CONSTANTS__.TimeFormat
+    window.ReportConfigConstants = __GENERATED_CONSTANTS__.ReportConfigConstants
+    window.StaffPerformanceColumnsConfig = __GENERATED_CONSTANTS__.StaffPerformanceColumnsConfig
+    window.BillingSummaryReportInfo = __GENERATED_CONSTANTS__.BillingSummaryReportInfo
+    window.ReportColumnsFormatCostOfWork = __GENERATED_CONSTANTS__.ReportColumnsFormatCostOfWork
+    window.WeekApprovalStatus = __GENERATED_CONSTANTS__.WeekApprovalStatus
+
+    window.StripeConfig = {}
+    window.StripeConfig.KEY ='null'
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window.__INIT_APP_DATA__ = {}
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    // task management section
+    window.__INIT_APP_DATA__.TASK_MANAGEMENT = {}
+    
+
+    
+    // end task management
+
+    window.__INIT_APP_DATA__.FEATURES = {}
+    
+        window.__INIT_APP_DATA__.FEATURES.LTT = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.TTC = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.URA = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.BTY = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.BRA = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.EMA = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.EST = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.TTF = false;
+    
+        window.__INIT_APP_DATA__.FEATURES.UGR = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.TZG = false;
+    
+        window.__INIT_APP_DATA__.FEATURES.QBI = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.SUB = false;
+    
+        window.__INIT_APP_DATA__.FEATURES.LVT = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.PTO = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.SDB = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.CLT = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.OVR = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.TTA = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.WAS = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.TWS = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.API = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.APUGR = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.APTZG = false;
+    
+        window.__INIT_APP_DATA__.FEATURES.APPTO = true;
+    
+        window.__INIT_APP_DATA__.FEATURES.APSDB = false;
+    
+
+    window.__INIT_APP_DATA__.USER_MANAGEMENT = {}
+    
+    
+
+    window.__INIT_APP_DATA__.REPORTS = {}
+    
+
+    window.__INIT_APP_DATA__.DAR_SETTINGS = {}
+    
+        window.__INIT_APP_DATA__.DAR_SETTINGS = {"hideDetailsOnLockTT":false,"usersForSeeAllTTFilter":{"all":false,"groupType":"USER_GROUP","groupIds":[],"userIds":[24]},"ttmCanSeeAutoApproved":false,"hideNotAssignedTTDetails":true,"hideAccountSettingsWhenDisabled":true,"allowUsersToSeeAllTT":true,"showUsernameInReports":false}
+    
+    window.__INIT_APP_DATA__.PASSWORD_SETTINGS = {}
+    window.__INIT_APP_DATA__.MAIL_SETTINGS = {}
+
+    window.__INIT_APP_DATA__.ACTIVE_LICENSE_INFO = {}
+    
+
+    window.__INIT_APP_DATA__.SUPPORT = {}
+    window.__INIT_APP_DATA__.SUPPORT.showSupportQuestionButton = true
+
+    window.__INIT_APP_DATA__.WELCOME = {}
+    window.__INIT_APP_DATA__.WELCOME.showWelcomeScreen = true
+    window.__INIT_APP_DATA__.WELCOME.loadExternalWelcomeScreen = true
+
+</script>
+
+
+
+
+
+
+<script src="./actiTIME - Login_files/ext-base.js.download"></script>
+
+<script type="text/javascript">
+    if (navigator.userAgent.match(/MSIE (9|10)\./))
+    {
+        // In IE9 & IE10 behave like in Gecko-compatible browsers.
+        // This fixes some rendering issues like bad shadows when using doctype.
+        // In IE11 this patch is not needed, because IE11 identifies itself as Gecko-compatible,
+        // so it is detected as Gecko automatically.
+        Ext.isIE = false;
+        Ext.isIE6 = false;
+        Ext.isIE7 = false;
+        Ext.isIE8 = false;
+        Ext.isGecko = true;
+        Ext.isGecko3 = true;
+        Ext.useShims = false;
+    }
+</script>
+
+
+<script src="./actiTIME - Login_files/ext-all.js.download"></script>
+
+<script src="./actiTIME - Login_files/date_fix.js.download"></script>
+
+<!-- Additional scripts -->
+<script src="./actiTIME - Login_files/init.js.download"></script>
+
+
+
+<script src="./actiTIME - Login_files/jquery.min.js.download"></script>
+<script src="./actiTIME - Login_files/jquery-ui.min.js.download"></script>
+<script src="./actiTIME - Login_files/jquery.cookie.js.download"></script>
+<script src="./actiTIME - Login_files/jquery.scrollintoview.min.js.download"></script>
+<script src="./actiTIME - Login_files/jquery.placeholder.min.js.download"></script>
+<script src="./actiTIME - Login_files/jsonrpc.min.js.download"></script>
+<script src="./actiTIME - Login_files/iscroll.js.download"></script>
+
+<script src="./actiTIME - Login_files/system_settings_js.jsp"></script>
+<script src="./actiTIME - Login_files/date_js.jsp"></script>
+
+<script src="./actiTIME - Login_files/message_bundle_js.jsp"></script>
+<script src="./actiTIME - Login_files/message_substitutions.js.download"></script>
+
+<script src="./actiTIME - Login_files/globals.webpack.js.download"></script><style type="text/css"></style>
+<script src="./actiTIME - Login_files/common.min.js.download"></script> 
+<script src="./actiTIME - Login_files/at.min.js.download"></script>
+
+    <script>
+        LoginPage = {};
+
+        LoginPage.BROWSER_TIMEOUT_MINUTES = 2;
+
+        // Rounded box messages and tooltips
+        LoginPage.ADMIN_MANAGER_TOOLTIP =
+            '            <div class="tooltip adminManagerTooltip"> ' +
+            '                       <div class="tooltip-content"> '+
+            '                           <p id="loginFirstTimeMsg">To login for the first time use the following username and password:</p>  ' +
+            '                           <p class="tooltipText userInfo">Username: <b>admin</b></p> ' +
+            '                           <p class="userInfo">Password: <b>manager</b></p>     ' +
+            '                            <table class="warning tooltipText">             ' +
+            '                               <tr>                  ' +
+            '                                   <td id="warningMarkContainer"><img src="/img/default/login/warning_orange_mark.png?hash=1846506722"></td>   ' +
+            '                                    <td class="warnMessage">It is strongly recommended to change the default password to keep your data secure.</td>        ' +
+            '                               </tr>                  ' +
+            '                            </table>              ' +
+            '                       </div>               ' +
+            '                </div>                ';
+
+
+        LoginPage.PASSWORD_SUCCESSFULLY_RESET_TOOLTIP =
+            '  <div class="tooltip passwordResetSuccessTooltip"> ' +
+            '          <div class="tooltip-content">                                                                     ' +
+            '                <p><b>Your password was successfully reset.</b></p>        ' +
+            '                <p class="tooltipText">Your username has been sent to your email address.</p>               ' +
+            '          </div>'+
+            '  </div>';
+
+        LoginPage.LOGIN_INFO_SUCCESSFULLY_SENT_TOOLTIP =
+            '  <div class="tooltip infoSentTooltip"> ' +
+            '       <div class="tooltip-content">  '  +
+            '            <div>{0}</div> ' +
+            '        </div>  '  +
+            '  </div>';
+
+        LoginPage.DEMO_TOOLTIP =
+            '<div class="tooltip demo">'+
+            '<div class="tooltip-content">'+
+            '<table id="demoCredentials">'+
+            '<tr>'+
+            '<td rowspan="2" id="adminCredentialsHeader">Administrator:</td>'+
+            '<td >Username: <b>admin</b></td>'+
+            '</tr>'+
+            '<tr>'+
+            '<td >Password: <b>manager</b></td>'+
+            '</tr>'+
+
+            '<tr>'+
+            '<td rowspan="2" id="userCredentialsHeader">Regular User:</td>'+
+            '<td id="userCredentialsUsername">Username: <b>trainee</b> </td>'+
+            '</tr>'+
+            '<tr>'+
+            '<td >Password: <b>trainee</b></td>'+
+            '</tr>'+
+            '</table>'+
+            '</div>'+
+            '</div>';
+
+    </script>
+
+    <script src="./actiTIME - Login_files/md5.js.download"></script>
+
+    <!--[if IE 8]>
+    <style type="text/css">
+        .tooltip:before,
+        .tooltip:after {
+            display: none;
+        }
+    </style>
+    <![endif]-->
+
+    
+
+
+    <script language="JavaScript">
+        
+        show_in_main_window(null);
+
+        var CHALLENGE_URL = '/getChallenge';
+
+        var PASSWORD_ERROR_JSON = null;
+        var LOGIN_PAGE_STATES = {};
+        var LOGIN_STATE = 'login';
+        var FORGET_PASSWORD_STATE = 'forgetPassword';
+        var RESET_PASSWORD_STATE = 'resetPassword';
+        var RESET_PASSWORD_LINK_EXPIRED_STATE = 'resetPasswordLinkExpired';
+        var pageController;
+
+    </script>
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" onload="initPage();" style="height:100%" class="loginPage  ext-chrome">
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+    function browserIncompatible()
+    {
+        return navigator.userAgent.match(/(Trident (4|5|6)\.)|(MSIE (2|3|4|5|6|7|8|9|10)\.)|^Opera/);
+    }
+
+    var showBrowserWarning = browserIncompatible() && !getCookie("ignoreIncompatibility");
+
+    function setIgnoreIncompatibility(ignore)
+    {
+        if( !ignore )
+            ignore = null;
+        setCookie( "ignoreIncompatibility", ignore );
+    }
+</script>
+
+
+<style type="text/css">
+    .apLogoImg  { padding-left:0\0/; }
+</style>
+
+<table width="100%" height="100%" cellspacing="0" cellpadding="0" align="center" border="0">
+    <tbody><tr>
+        <td align="center">
+            <table class="whiteBoxWithLogoTable" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td>
+                <div id="whiteBoxWithLogo" class="whiteBoxWithLogo ">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                            <td id="logoContainer">
+                                
+                                <div>
+                                    
+                                    <div class="atLogoImg"></div>
+                                    
+                                </div>
+                                <div>
+                                    
+                                    <div class="productNameContainer">
+                                        <div class="atProductName"></div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </td>
+                            <td id="whiteBoxWithLogoBody">
+                                <div class="innerContentWhiteBox visible">
+                                    
+
+
+
+
+
+
+
+
+
+<table border="0" cellspacing="0" class="mainArea">
+    <script type="text/javascript">
+        document.writeln('    <tr>');
+        document.writeln('        <td id="headerContainer" class="header"></td>');
+        document.writeln('    </tr>');
+    </script>    <tbody><tr>
+        <td id="headerContainer" class="header">Please identify yourself</td>
+    </tr>
+
+    <script type="text/javascript">
+        document.writeln('<tr>');
+        document.writeln('    <td id="tooltipContainer" style="display: none;">');
+
+        document.writeln('    </td>');
+        document.writeln('</tr>');
+    </script><tr>
+    <td id="tooltipContainer" style="display: none;">
+    </td>
+</tr>
+
+    
+    <tr>
+        <td id="demoTooltipContainer"><div class="tooltip demo"><div class="tooltip-content"><table id="demoCredentials"><tbody><tr><td rowspan="2" id="adminCredentialsHeader">Administrator:</td><td>Username: <b>admin</b></td></tr><tr><td>Password: <b>manager</b></td></tr><tr><td rowspan="2" id="userCredentialsHeader">Regular User:</td><td id="userCredentialsUsername">Username: <b>trainee</b> </td></tr><tr><td>Password: <b>trainee</b></td></tr></tbody></table></div></div></td>
+    </tr>
+    
+    <tr>
+        <td class="errorMessagesArea" id="errorMessagesArea" style="display:none">
+            
+            <div id="ClientSideErrorMessage" style="width:257px; display: none;">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody><tr>
+                        <td>
+                            <table>
+                                <tbody><tr>
+                                    <td id="errorContainer">
+                                        <span class="errormsg" id="errorSpan"></span>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="display: none;" id="noteContainer">
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table id="loginFormContainer" style="">
+                <form name="LoginForm" id="loginForm" method="post" action="https://demo.actitime.com/login.do" style="height: 100%"></form>
+                    <input type="hidden" name="password">
+                    <input type="hidden" name="submitted" value="1">
+                    <script type="text/javascript">
+                        document.writeln('    <tr>');
+                        document.writeln('        <td class="textFieldsArea">');
+                        document.writeln('            <table class="textFieldsTable" cellpadding="3" cellspacing="0" border="0">');
+                        document.writeln('                <tr>');
+                        document.writeln('                    <td valign="middle"><input type="text" name="username" value="" id="username" class="textField"></td>');
+                        document.writeln('                </tr>');
+                        document.writeln('                <tr>');
+                        document.writeln('                    <td valign="middle"><input type="password" name="pwd" value="" class="textField pwdfield"></td>');
+                        document.writeln('                </tr>');
+                        document.writeln('            </table>');
+                        document.writeln('        </td>');
+                        document.writeln('    </tr>');
+                        document.writeln('    <tr>');
+                        document.writeln('        <td class="keepLoggedIn">');
+                        document.writeln('            <table cellpadding="0" cellspacing="0" border="0" width="100%">');
+                        document.writeln('                <tr>');
+                        document.writeln('                    <td valign=top width="5">');
+                        document.writeln('                     <div id="keepLoggedInCheckBoxContainer"> ');
+                        if(areCookiesEnabled())
+                            document.writeln('                    <input type="checkbox" name="remember" value="on" id="keepLoggedInCheckBox" title="Do not select if this computer is shared">');
+                        else
+                        document.writeln('                    <input id="keepLoggedInCheckBox" type=\"checkbox\" name=\"remember\" disabled>');
+                        document.writeln('                     </div> ');
+                        document.writeln('                    </td>');
+                        document.writeln('                    <td id="keepMeLoggedInSection" valign=top width="120">');
+                        document.writeln('                        <div id="keepMeLoggedInCaptionContainer" title="Do not select if this computer is shared" class="label'+(areCookiesEnabled()?'':'Disabled')+'"><label id="keepLoggedInLabel" for="keepLoggedInCheckBox">Keep me logged in</label></div>');
+                        
+                        if (!areCookiesEnabled())
+                            document.writeln('                    <div class="enableCookies">Enable cookies to use this option</div>');
+                        
+                        document.writeln('                    </td>');
+                        document.writeln('                    <td valign=top align="right" id="loginButtonContainer">');
+                        document.writeln('                        <a id="loginButton" class="initial" href="javascript:void(0)" onclick="pageController.submitForm(); return false;"><div>Login </div></a>');
+                        document.writeln('                        <div id="inProgressText" class="inProgressText">Logging in ...</div>');
+                        document.writeln('                    </td>');
+                        document.writeln('                </tr>');
+                        
+                        document.writeln('            </table>');
+                        document.writeln('        </td>');
+                        document.writeln('    </tr>');
+                        
+                        document.writeln('  <tr>');
+                        document.writeln('       <td id="loginRecoveryLinkContainer"><a href="javascript: void(0)" onclick="pageController.changeState(LOGIN_PAGE_STATES[FORGET_PASSWORD_STATE])" id="toPasswordRecoveryPageLink">Forgot your password?</a></td>');
+                        document.writeln('  </tr>');
+                        
+                    </script>    <tbody><tr>
+        <td class="textFieldsArea">
+            <table class="textFieldsTable" cellpadding="3" cellspacing="0" border="0">
+                <tbody><tr>
+                    <td valign="middle"><input type="text" name="username" value="" id="username" class="textField" placeholder="Username"></td>
+                </tr>
+                <tr>
+                    <td valign="middle"><input type="password" name="pwd" value="" class="textField pwdfield" placeholder="Password"></td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td class="keepLoggedIn">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tbody><tr>
+                    <td valign="top" width="5">
+                     <div id="keepLoggedInCheckBoxContainer"> 
+                    <input type="checkbox" name="remember" value="on" id="keepLoggedInCheckBox" title="Do not select if this computer is shared">
+                     </div> 
+                    </td>
+                    <td id="keepMeLoggedInSection" valign="top" width="120">
+                        <div id="keepMeLoggedInCaptionContainer" title="Do not select if this computer is shared" class="label"><label id="keepLoggedInLabel" for="keepLoggedInCheckBox" style="cursor: default;">Keep me logged in</label></div>
+                    </td>
+                    <td valign="top" align="right" id="loginButtonContainer">
+                        <a id="loginButton" class="initial" href="javascript:void(0)" onclick="pageController.submitForm(); return false;"><div>Login </div></a>
+                        <div id="inProgressText" class="inProgressText">Logging in ...</div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+  <tr>
+       <td id="loginRecoveryLinkContainer"><a href="javascript: void(0)" onclick="pageController.changeState(LOGIN_PAGE_STATES[FORGET_PASSWORD_STATE])" id="toPasswordRecoveryPageLink">Forgot your password?</a></td>
+  </tr>
+
+                    <script>
+                        disableTextSelection(document.getElementById("keepLoggedInLabel"));
+                    </script>
+                
+            </tbody></table>
+            
+            <table id="forgotPasswordFormContainer" style="display: none;" cellpadding="0" cellspacing="0" border="0">
+                <form action="https://demo.actitime.com/login.do" method="post" id="forgetPasswordForm"></form>
+                    <tbody><tr>
+                        <td class="textFieldsArea" colspan="2">
+                            <table class="textFieldsTable" cellpadding="3" cellspacing="0" border="0">
+                                <tbody><tr>
+                                    <td><input type="text" maxlength="255" name="forgetPasswordEmailOrUsername" id="forgetPasswordEmailOrUsername" class="textField" placeholder="Your Email or Username"></td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="forgetPasswordButtonContainer"><a id="forgetPasswordButton" class="initial button" href="javascript:void(0)" onclick="pageController.submitForm(); return false;"><div>Request Login Info</div></a></td>
+                        <td valign="middle" align="left" width="115" style="padding-bottom: 3px;"><div id="forgetPasswordInProgressText" class="inProgressText">Processing request ...</div></td>
+                    </tr>
+                
+            </tbody></table>
+            
+            <table id="resetPasswordFormContainer" style="display: none;" cellpadding="0" cellspacing="0" border="0">
+                <form name="ResetPasswordForm" id="resetPasswordForm" method="post" action="https://demo.actitime.com/forgot.do" style="height: 100%"></form>
+                    <input type="hidden" name="submitted" value="1">
+                    <input type="hidden" name="passwordRecoveryToken" value="">
+                    <tbody><tr>
+                        <td class="textFieldsArea" colspan="2">
+                            <table class="textFieldsTable" cellpadding="3" cellspacing="0" border="0">
+                                <tbody><tr>
+                                    <td><input type="password" maxlength="32" name="newPwd" id="newPwd" class="textField newPwd" placeholder="Enter a new password"><input type="hidden" name="newPassword" value="" id="newPassword"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="password" maxlength="32" name="newPwdConfirm" id="newPwdConfirm" class="textField newPwdConfirm" placeholder="Confirm your new password"><input type="hidden" name="newPasswordConfirm" value="" id="newPasswordConfirm"></td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="resetPasswordButtonContainer"><a id="resetPasswordButton" class="initial button" href="javascript:void(0)" onclick="pageController.submitForm(); return false;"><div>Reset My Password</div></a></td>
+                        <td valign="middle" align="left" width="115" style="padding-bottom: 3px;"><div id="resetPasswordInProgressText" class="inProgressText">Processing request ...</div></td>
+                    </tr>
+                
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td id="changeStateLinkContainer" style="display: none;">
+            <a href="javascript: void(0)" onclick="pageController.changeState(LOGIN_PAGE_STATES[LOGIN_STATE])" id="toLoginPageLink">Return to login page</a>
+        </td>
+    </tr>
+</tbody></table>
+
+                                </div>
+                            </td>
+                            <td id="rightBar" style="display: table-cell;">
+                                &nbsp;
+                            </td>
+                            <td valign="top" class="browserWarningArea" id="browserWarningArea" style="display: none;">
+                                <table width="212" class="browserWarning" cellpadding="11" cellspacing="0" border="0">
+                                    <tbody><tr>
+                                        <td valign="top"><img src="./actiTIME - Login_files/warning.png" height="16" width="16"></td>
+                                        <td>
+                                            actiTIME has detected that <b>JavaScript is disabled</b> in your browser. JavaScript is required for the proper work of actiTIME.
+                                            <br><br>
+                                            Please enable JavaScript in the browser settings and then
+                                            <br>
+                                            <a href="https://demo.actitime.com/login.do?">reload the page</a>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                            <script type="text/javascript">
+                                if(showBrowserWarning)
+                                {
+                                    document.writeln('<td valign="top" class="browserWarningArea">');
+                                    document.writeln('<table width="212" class="browserWarning" cellpadding="11" cellspacing="0" border="0">');
+                                    document.writeln('    <tr>');
+                                    document.writeln('        <td valign="top"><img src="/img/default/login/warning.png?hash=1846506722" height="16" width="16"></td>');
+                                    document.writeln('        <td>Please note that browser');
+                                    document.writeln('            you are using <b>is not supported</b> by actiTIME. Some of actiTIME interfaces may not function properly!</td>');
+                                    document.writeln('    </tr>');
+                                    document.writeln('    <tr>');
+                                    document.writeln('        <td></td>');
+                                    document.writeln('        <td align="left" valign="top"><img src="/img/default/login/arrow.gif?hash=1846506722" height="5" width="3" align="left" style="margin: 4px 5px 0 0">Supported browsers are Internet Explorer 11, EDGE, Mozilla Firefox, Google Chrome, Safari.</td>');
+                                    document.writeln('    </tr>');
+                                    if( areCookiesEnabled() )
+                                    {
+                                        document.writeln('    <tr>');
+                                        document.writeln('        <td></td>');
+                                        document.writeln('        <td align="left" valign="top" style="padding-left: 5px">');
+                                        document.writeln('            <table class="disableWarning" cellpadding=0 cellspacing=0 border="0">');
+                                        document.writeln('                <tr>');
+                                        document.writeln('                    <td><input type="checkbox" id="disableBrowserWarning" onchange="setIgnoreIncompatibility(this.checked)"></td>');
+                                        document.writeln('                    <td><label id="disableBrowserWarning" for="disableBrowserWarning">Do not show this warning again</label></td>');
+                                        document.writeln('                </tr>');
+                                        document.writeln('            </table>');
+                                        document.writeln('        </td>');
+                                        document.writeln('    </tr>');
+
+                                        disableTextSelection(document.getElementById("disableBrowserWarning"));
+                                    }
+                                    document.writeln('</table>');
+                                    document.writeln('</td>');
+                                }
+                            </script>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </td>
+            </tr>
+                <tr>
+                    <td>
+                        <table class="footer" cellpadding="4" cellspacing="0">
+                            <tbody><tr>
+                                <td><nobr>actiTIME 2020 Online</nobr></td>
+
+                                
+                                <td id="copyRight">
+                                    <nobr>© <a href="http://www.actitime.com/" target="_blank">actiTIME Inc.</a></nobr>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+<style type="text/css">
+    /* Fix for bug 52834: Unnecessary message flickers on login page after submitting invalid username or password.
+            We make browser warning visible only after login table was fully loaded. */
+    .whiteBoxWithLogoTable .whiteBoxWithLogo #browserWarningArea {
+        display: table-cell;
+    }
+</style>
+
+<script type="text/javascript">
+    if( !showBrowserWarning ){
+        var rightBar = document.getElementById( "rightBar" );
+        rightBar.style.display='table-cell';
+    }
+
+    var browserWarningArea = document.getElementById("browserWarningArea");
+    browserWarningArea.style.display='none';
+
+    $("#whiteBoxWithLogoBody").find(".innerContentWhiteBox").addClass("visible");
+</script>
+
+<script type="text/javascript">
+
+function initPlaceHolders(){
+
+    var usernamePlaceholderText = "Username" ;
+    var passwordPlaceholderText = "Password" ;
+    var forgotPasswordText = "Your Email or Username" ;
+    var newPwdText = "Enter a new password" ;
+    var confirmNewPwdText = "Confirm your new password" ;
+    $("#username").attr('placeholder', usernamePlaceholderText).placeholder();
+    $("input[name=pwd]").attr('placeholder', passwordPlaceholderText).placeholder();
+    $("#forgetPasswordEmailOrUsername").attr('placeholder', forgotPasswordText).placeholder();
+    $("#newPwd").attr('placeholder', newPwdText).placeholder();
+    $("#newPwdConfirm").attr('placeholder', confirmNewPwdText).placeholder();
+}
+function initPage()
+{
+    LOGIN_PAGE_STATES[LOGIN_STATE] = new LoginState( {
+        buttonId : "loginButton",
+        formId : "loginForm",
+        formContainerId : "loginFormContainer",
+        progressTextId : "inProgressText",
+        inputElementNames : [ "username", "pwd", "keepLoggedInCheckBox" ],
+        focusElementName : "username",
+        showAdminManagerTooltip : false,
+        showPasswordResetTooltip :  false,
+        isDemoMode : true,
+        changeStateLinkId : "toPasswordRecoveryPageLink",
+        titleKey: "login.page.title.login"
+    } );
+
+    LOGIN_PAGE_STATES[FORGET_PASSWORD_STATE] = new ForgetPasswordState( {
+        buttonId : "forgetPasswordButton",
+        formId : "forgetPasswordForm",
+        formContainerId : "forgotPasswordFormContainer",
+        progressTextId : "forgetPasswordInProgressText",
+        inputElementNames : [ "forgetPasswordEmailOrUsername" ],
+        focusElementName : "forgetPasswordEmailOrUsername",
+        changeStateLinkId : "toLoginPageLink",
+        changeStateLinkContainerId : "changeStateLinkContainer"
+    } ) ;
+
+    
+    LOGIN_PAGE_STATES[RESET_PASSWORD_STATE] = new ResetPasswordState( {
+        buttonId : "resetPasswordButton",
+        formId : "resetPasswordForm",
+        formContainerId : "resetPasswordFormContainer",
+        progressTextId : "resetPasswordInProgressText",
+        inputElementNames : [ "newPwd", "newPwdConfirm" ],
+        focusElementName : "newPwd",
+        changeStateLinkId : null,
+        changeStateLinkContainerId : null,
+        tooltipText : '\<p\>Hello ,\</p\>Please use the form below to create a new password.',
+        titleKey: "login.page.title.reset"
+    } );
+
+    LOGIN_PAGE_STATES[RESET_PASSWORD_LINK_EXPIRED_STATE] = new ErrorState( {
+        buttonId : null,
+        formId : null,
+        formContainerId : null,
+        progressTextId : null,
+        inputElementNames : [  ],
+        focusElementName : null,
+        changeStateLinkId : "toLoginPageLink",
+        changeStateLinkContainerId : "changeStateLinkContainer",
+        message : messageResource.getMessage( "password_recovery.reset_password.link_expired",
+                                                [ "10" ] ),
+        titleKey: "login.page.title.reset"
+    } );
+
+    pageController = new LoginPageController( LOGIN_PAGE_STATES['login'] );
+    pageController.showPageContent();
+    initPlaceHolders();
+}
+</script>
+
+
+</body></html>

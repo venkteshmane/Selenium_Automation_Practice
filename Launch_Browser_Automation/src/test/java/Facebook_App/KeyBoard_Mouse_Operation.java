@@ -1,4 +1,4 @@
-package com.Facebook_App;
+package Facebook_App;
 
 import java.awt.AWTException;
 import java.awt.Robot;

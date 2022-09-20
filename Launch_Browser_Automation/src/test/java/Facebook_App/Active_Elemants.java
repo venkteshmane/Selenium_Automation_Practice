@@ -1,4 +1,4 @@
-package com.Facebook_App;
+package Facebook_App;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

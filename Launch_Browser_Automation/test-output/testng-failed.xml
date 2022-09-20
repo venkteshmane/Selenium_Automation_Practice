@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="actiTIME_App.BrowserNavigation">
+      <class name="actiTIME_App.WebYable_StudentMarks">
         <methods>
-          <include name="Browser_Navigation"/>
+          <include name="PrintListValues_SortedOrder"/>
         </methods>
-      </class> <!-- actiTIME_App.BrowserNavigation -->
+      </class> <!-- actiTIME_App.WebYable_StudentMarks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

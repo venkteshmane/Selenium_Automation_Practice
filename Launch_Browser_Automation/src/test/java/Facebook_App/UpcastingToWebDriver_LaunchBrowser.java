@@ -1,4 +1,4 @@
-package com.Facebook_App;
+package Facebook_App;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

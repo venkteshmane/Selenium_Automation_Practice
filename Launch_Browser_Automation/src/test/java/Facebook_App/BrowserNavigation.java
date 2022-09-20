@@ -1,13 +1,10 @@
-package com.Facebook_App;
-
-
-import java.util.concurrent.TimeUnit;
+package Facebook_App;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class wait_test {
+public class BrowserNavigation {
 	@Test(priority = 1)
 	public void Browser_navigations() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
@@ -15,9 +12,14 @@ public class wait_test {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.bridgelabz.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(3000);
 		driver.navigate().to("https://www.facebook.com/");
-
+		Thread.sleep(3000);
+		driver.navigate().back();
+		Thread.sleep(3000);
+		driver.navigate().forward();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		driver.close();
 	}
-
 }

@@ -1,4 +1,4 @@
-package com.Facebook_App;
+package Facebook_App;
 
 import java.io.File;
 import java.io.IOException;

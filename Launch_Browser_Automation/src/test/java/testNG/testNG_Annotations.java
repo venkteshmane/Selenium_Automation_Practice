@@ -11,10 +11,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class testNG_Concepts {
-
+public class testNG_Annotations {
 	
-	public class BaseTestNG {
 		@BeforeMethod
 		public void beforeMethod() {
 			Reporter.log("beforeMethod", true);
@@ -39,6 +37,10 @@ public class testNG_Concepts {
 		public void beforeTest() {
 			Reporter.log("beforeTest", true);
 		}
+		@Test
+		public void test() {
+			Reporter.log("test", true);
+		}
 
 		@AfterTest
 		public void afterTest() {
@@ -54,6 +56,5 @@ public class testNG_Concepts {
 		public void afterSuite() {
 			Reporter.log("afterSuite", true);
 		}
-	}
-
 }
+	
